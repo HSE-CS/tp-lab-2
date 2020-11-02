@@ -134,9 +134,6 @@ void msort(T * arr, int size){
     //cout << typeid(arr).name();
     rekurs(arr, 0, size-1);
 
-    for (int i = 0; i < size; ++i) {
-        cout << arr[i] << "  ";
-    }
 }
 
 
