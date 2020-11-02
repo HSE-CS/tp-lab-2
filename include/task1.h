@@ -4,8 +4,8 @@
 #include <iostream>
 #include <cstring>
 // Функция сортировки двухпутевым слиянием
-template<class T,size_t n>
-void msort(T (&a)[n],int N)
+template<class T>
+void msort(T* a, int n)
 {
   int mid = n / 2; // находим середину сортируемой последовательности
   if (n % 2 == 1)
