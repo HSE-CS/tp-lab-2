@@ -1,15 +1,21 @@
 #ifndef TASK3_H_INCLUDED
 #define TASK3_H_INCLUDED
-#include <iostream>
-#include <cstdio>
+#include <stdio.h>
+#include <stdlib.h>
 #include <cstdlib>
-#include <cmath>
-#include <algorithm>
+#include <iostream>
+#include <cstring>
 
-using namespace std;
+template<class T, size_t SIZE> void map(T arr[], T (*f_change)(T))
+{
+	for(int i = 0; i < SIZE; i++ )
+		arr[i] = f_change(arr[i]);
+}
 
-unsigned long long sumPrime(unsigned long long hbound);
-static bool checkPrimeNew(unsigned long long value);
+int change_mod_2020 (int a)
+{
+    return a%2020;
+}
 
 
 

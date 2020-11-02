@@ -38,7 +38,6 @@ template <class T> void msort(T (*arr), const size_t SIZE)
             if (left_ind < LEFT_SIZE && right_ind < RIGHT_SIZE)
             {
                 if ( comp(left_arr[left_ind], right_arr[right_ind]) )
-                //if (left_arr[left_ind] < right_arr[right_ind])
                 {
                     arr[ind] = left_arr[left_ind];
                     left_ind++;
@@ -65,49 +64,4 @@ template <class T> void msort(T (*arr), const size_t SIZE)
 
     }
 }
-/*
-template <> void msort<char*>(char **arr, const size_t SIZE)
-{
-    if (SIZE > 1)
-    {
-        size_t LEFT_SIZE = SIZE / 2;
-        char **left_arr = (char**)malloc((LEFT_SIZE) * sizeof(char*));
-        for (size_t i = 0; i < LEFT_SIZE; i++)
-            left_arr[i] = arr[i];
-        msort(left_arr, LEFT_SIZE);
-
-        size_t RIGHT_SIZE = SIZE - LEFT_SIZE;
-        char **right_arr = (char**)malloc((RIGHT_SIZE) * sizeof(char*));
-        for (size_t i = 0; i < RIGHT_SIZE; i++)
-            right_arr[i] = arr[LEFT_SIZE + i];
-        msort(right_arr, RIGHT_SIZE);
-
-        size_t left_ind = 0, right_ind = 0;
-        for (size_t ind = 0; ind < SIZE; ind++)
-        {
-            if (strlen(left_arr[left_ind]) < strlen(right_arr[right_ind]))
-            {
-                arr[ind] = left_arr[left_ind];
-                left_ind++;
-            }
-
-            else
-            {
-                arr[ind] = right_arr[right_ind];
-                right_ind++;
-            }
-
-        }
-
-    }
-}
-*/
-
-
-
-
-
-
-
-
 #endif // TASK1_H_INCLUDED

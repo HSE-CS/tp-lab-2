@@ -1,16 +1,23 @@
 #ifndef TASK2_H_INCLUDED
 #define TASK2_H_INCLUDED
-#include <iostream>
-#include <cstdio>
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <cstdlib>
-#include <cmath>
-#include <algorithm>
+#include <iostream>
+#include <cstring>
 
-using namespace std;
-
-bool checkPrime(unsigned long long value);
-unsigned long long nPrime(unsigned n);
-unsigned long long nextPrime(unsigned long long value);
-
-
+template<class T, size_t SIZE> T * createArr(T (*f_gen)())
+{
+	T * arr = new T[SIZE];
+	for(int i = 0; i < SIZE; i++ )
+	{
+		arr[i] = f_gen();
+	}
+	return arr;
+}
+int rand_int_mod_2020 ()
+{
+    return rand()%2020;
+}
 #endif // TASK2_H_INCLUDED
