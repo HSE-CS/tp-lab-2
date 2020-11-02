@@ -4,15 +4,15 @@
 #include <iostream>
 #include <cstring>
 // Функция сортировки двухпутевым слиянием
-template<class T>
-void msort(T * a, int n)
+template<class T,size_t n>
+void msort(T (&a)[n])
 {
   int mid = n / 2; // находим середину сортируемой последовательности
   if (n % 2 == 1)
     mid++;
   int h = 1; // шаг
   // выделяем память под формируемую последовательность
-  T c = (T)malloc(n * sizeof(T[0]));
+  T *c = (T*)malloc(n * sizeof(T));
   int step;
   while (h < n) 
   {
