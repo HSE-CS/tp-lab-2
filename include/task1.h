@@ -64,7 +64,7 @@ void msort(char** a, int n)
         mid++;
 
     int h = 1;
-    char** c = (char*)malloc(n * sizeof(char));
+    char* c = (char*)malloc(n * sizeof(char));
     int step;
     while (h < n)
     {
