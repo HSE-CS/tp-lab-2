@@ -10,8 +10,6 @@
 #include <iterator>
 #include <cstring>
 
-using namespace std;
-
 template<typename E>
 bool comp(E a, E b){
     return a < b;
@@ -36,27 +34,27 @@ void msort(T arr[], int N) noexcept
         T*  tmp_array = new T[N];
         while (li < l || ri < N) {
             if (comp(arr[li], arr[ri])) {
-                tmp_array[i++] = move(arr[li]);
+                tmp_array[i++] = std::move(arr[li]);
                 li++;
             } else {
-                tmp_array[i++] = move(arr[ri]);
+                tmp_array[i++] = std::move(arr[ri]);
                 ri++;
             }
             if (li == l) {
-                copy(make_move_iterator(&arr[ri]),
-                        make_move_iterator(&arr[N]),
+                std::copy(std::make_move_iterator(&arr[ri]),
+                          std::make_move_iterator(&arr[N]),
                         &tmp_array[i]);
                 break;
             }
             if (ri == N) {
-                copy(make_move_iterator(&arr[li]),
-                        make_move_iterator(&arr[l]),
+                std::copy(std::make_move_iterator(&arr[li]),
+                          std::make_move_iterator(&arr[l]),
                         &tmp_array[i]);
                 break;
             }
         }
-        copy(make_move_iterator(&tmp_array[0]),
-                make_move_iterator(&tmp_array[N]),
+        std::copy(std::make_move_iterator(&tmp_array[0]),
+                  std::make_move_iterator(&tmp_array[N]),
                 &arr[0]);
     }
 }
