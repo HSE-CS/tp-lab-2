@@ -8,7 +8,6 @@
 #include <algorithm>
 #include <cstddef>
 #include <iterator>
-#include <memory>
 #include <cstring>
 
 using namespace std;
@@ -34,7 +33,7 @@ void msort(T arr[], int N) noexcept
         msort(&arr[l], r);
 
         size_t li = 0, ri = l, i = 0;
-        std::unique_ptr<T[]> tmp_array(new T[N]);
+        T*  tmp_array = new T[N];
         while (li < l || ri < N) {
             if (comp(arr[li], arr[ri])) {
                 tmp_array[i++] = move(arr[li]);
