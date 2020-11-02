@@ -5,7 +5,7 @@
 #include <string>
 // Функция сортировки двухпутевым слиянием
 template<class T,size_t n>
-void merge(T (&a)[n],int (*comp)( T , T ))
+void msort(T (&a)[n],int (*comp)( T , T ))
 {
   int mid = n / 2; // находим середину сортируемой последовательности
   if (n % 2 == 1)
