@@ -20,7 +20,7 @@ bool comp<char *>(char *a, char *b){
 }
 
 template<typename T>
-void msort(T arr[], size_t N) noexcept
+void msort(T arr[], int N) noexcept
 {
     if (N > 1) {
         const size_t l = N/2;

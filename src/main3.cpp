@@ -5,11 +5,9 @@
 #include <iostream>
 #include <cstddef>
 #include <cstring>
+#include "task3.h"
 
-namespace lab2{
-
-    #include "task3.h"
-
+/*namespace lab2{
     template<class T>
     T change(T val)
     {
@@ -24,7 +22,7 @@ namespace lab2{
             val[i] = val[i] + 1;
         return val;
     }
-}
+}*/
 
 int main() {
 /*    const size_t n = 5;
