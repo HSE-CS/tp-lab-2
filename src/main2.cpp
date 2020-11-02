@@ -10,7 +10,7 @@ int gen()
 }
 int main()
 {
-	int * arr = createArr(5,gen);
+	int * arr = createArr<int,5>(gen);
 	for(int i =0; i < 5; i++)
 	{
 		std::cout<<arr[i] << std :: endl;
