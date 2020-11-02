@@ -3,31 +3,23 @@
 #include <string>
 #include "task1.h"
 
-int comp2(const  double a,const double b ) 
-{
-    return a - b;
-}
-
-int comp(const std :: string a , const std::string b)
-{
-	return a.length() - b.length();
-}
 int main()
 {
-	double a [] = {1.1,9.3,4.2,2.2,3.6,7.1,5.5,0};
-	msort(a,8);
-	for(int i = 0; i < 8; i++)
+        const size_t n = 6;
+	int *val = new int[n]{5, 3, 2, 4, 1, 6};
+	msort(val,6);
+
+	for(int i = 0; i < 6; i++)
 	{
-		std :: cout << a[i] << std :: endl;
-	}
+		std :: cout << val[i] << std::endl;
+	}/*
+	char *c[10 * sizeof(char*)];
+ 	for(int i = 0; i < 10;i++)
+  		c[i] = (char*)calloc(100,sizeof(char));*/
 	
-	char**b = (char**)calloc(4,sizeof(char*));
-	b[0] = "aaa";
-	b[1] = "a";
-	b[2] = "aaaaaaaaa";
-	b[3] = "aaaa";
-	msort(b,4);
-	for(int i = 0; i < 4; i++)
+	char* b[n]{(char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr"};
+	msort(b,6);
+	for(int i = 0; i < 6; i++)
 	{
 		std::cout << b[i] << std :: endl;
 	}
