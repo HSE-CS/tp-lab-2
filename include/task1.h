@@ -9,8 +9,10 @@
 #include <memory>
 #include <cstring>
 
-template<typename T>
-bool comp(T a, T b){
+using namespace std;
+
+template<typename E>
+bool comp(E a, E b){
     return a < b;
 }
 
