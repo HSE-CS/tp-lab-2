@@ -27,7 +27,7 @@ int main(){
         cout << arr[i] << "  ";
     };*/
 
-    const size_t n = 5;
+    /*const size_t n = 5;
 
     char** arr;
     arr = createArr<char*, n>(gen);
@@ -51,7 +51,9 @@ int main(){
     }
 
     delete[] arr;
-    delete[] expected;
+    delete[] expected;*/
+
+    return 0;
 }
 
 

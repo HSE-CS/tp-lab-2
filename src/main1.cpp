@@ -18,7 +18,9 @@ int main(){
     msort(val, n);
     delete[] val;*/
 
-    const size_t n = 6;
+    /*const size_t n = 6;
     char* val[n]{(char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr"};
-    msort(val, n);
+    msort(val, n);*/
+
+    return 0;
 }
