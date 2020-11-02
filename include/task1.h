@@ -1,12 +1,11 @@
 #ifndef TASK1_H
 #define TASK1_H
 
-#include <iostream>
-#include <cmath>
-#include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
 #include <cstdlib>
-#include <ctime>
-
+#include <iostream>
+#include <cstring>
 using namespace std;
 template <typename T>
 void msort(T* a, int n)
@@ -17,8 +16,8 @@ void msort(T* a, int n)
         mid++;
     
     int h = 1;
-    //int* p_darr = new int[num];
-    T* c = new T[n];
+
+    T* c = (T*)malloc(n * sizeof(T[0]));
     int step;
     while (h < n)
     {
@@ -65,8 +64,7 @@ void msort(char** a, int n)
         mid++;
 
     int h = 1;
-
-    T* c = new T[n];
+    char** c = (char*)malloc(n * sizeof(char));
     int step;
     while (h < n)
     {
