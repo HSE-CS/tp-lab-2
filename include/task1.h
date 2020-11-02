@@ -17,7 +17,8 @@ void msort(T* a, int n)
         mid++;
     
     int h = 1;
-    T* c = (T*)malloc(n * sizeof(T));
+    //int* p_darr = new int[num];
+    T* c = new T[n];
     int step;
     while (h < n)
     {
@@ -64,7 +65,8 @@ void msort(char** a, int n)
         mid++;
 
     int h = 1;
-    T* c = (T*)malloc(n * sizeof(T));
+
+    T* c = new T[n];
     int step;
     while (h < n)
     {
@@ -76,7 +78,7 @@ void msort(char** a, int n)
         {
             while ((i < step) && (j < n) && (j < (mid + step)))
             {
-                if (strcmp(a[i],a[j])<0)
+                if (strlen(a[i])<strlen(a[j]))
                 {
                     c[k] = a[i];
                     i++; k++;
