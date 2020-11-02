@@ -20,13 +20,13 @@ template <class T> void msort(T (*arr), const size_t SIZE)
 {
     if (SIZE > 1)
     {
-        size_t LEFT_SIZE = SIZE / 2;
+        const size_t LEFT_SIZE = SIZE / 2;
         T *left_arr = new T[LEFT_SIZE];
         for (size_t i = 0; i < LEFT_SIZE; i++)
             left_arr[i] = arr[i];
         msort(left_arr, LEFT_SIZE);
 
-        size_t RIGHT_SIZE = SIZE - LEFT_SIZE;
+        const size_t RIGHT_SIZE = SIZE - LEFT_SIZE;
         T *right_arr = new T[RIGHT_SIZE];
         for (size_t i = 0; i < RIGHT_SIZE; i++)
             right_arr[i] = arr[LEFT_SIZE + i];
