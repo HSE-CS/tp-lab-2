@@ -56,8 +56,8 @@ void msort(T* a, int n)
             a[i] = c[i];
     }
 }
-template<typename T>
-void msort<char*>(char* a, int n)
+//template<typename T>
+void msort(char** a, int n)
 {
     int mid = (n + n % 4) / 2;
     if (n % 2 == 1)
