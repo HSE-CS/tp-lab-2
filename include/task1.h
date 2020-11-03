@@ -13,7 +13,7 @@ void merge(T *arr,size_t n, size_t l, size_t r) {
   T *mas=new T[n];
   size_t mid=(l+r)/2,start=l,fin=mid+1; 
   for(size_t i=l; i<=r; i++) {
-    if ((start<=mid) && ((fin>r) || (comp(arr[start],arr[fin]))))
+    if ((start<=mid) && ((fin>r) || (arr[start]<arr[fin])))
     {
       mas[i]=arr[start];
       start++;
