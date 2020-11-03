@@ -34,7 +34,7 @@ void merge(T *arr,size_t n, size_t l, size_t r) {
     }
   }
   for (size_t i=l; i<=r; i++) arr[i]=mas[i];
-  delete []mas
+  delete []mas;
 }
 
 template<typename T>
