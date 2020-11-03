@@ -2,6 +2,8 @@
 // Created by sharg on 03.11.2020.
 //
 
+#include <iostream>
+#include <cstring>
 #include "task1.h"
 
 using namespace std;

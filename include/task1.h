@@ -55,7 +55,7 @@ void merge(char **array, size_t left, size_t middle, size_t right) {
         rightArray[j] = array[middle + 1 + j];
     size_t firstIndex = 0, secondIndex = 0, mergeIndex = left;
     while (firstIndex < lenghtLeftArray && secondIndex < lenghtRightArray) {
-        if (strlen(leftArray[firstIndex]) <= strlen(rightArray[secondIndex])) {
+        if (strlen(leftArray[firstIndex]) < strlen(rightArray[secondIndex])) {
             array[mergeIndex] = leftArray[firstIndex];
             firstIndex++;
         } else {
