@@ -1,5 +1,6 @@
 #pragma once
 #include <cstring>
+#include <cstdlib>
 template <typename T> bool comp(T a, T b)
 {
 	return (a <= b);
@@ -51,7 +52,7 @@ void mergesort(T* a, size_t left, size_t right)
 			j++;
 		}
 	}
-	delete[] buf;
+	free(buf);
 	return;
 }
 
