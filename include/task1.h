@@ -22,7 +22,7 @@ void merge(T* array, size_t left, size_t middle, size_t right)
 
 	while (ind_Left < len_left && ind_Right < len_right)
 	{
-		if (Left[ind_Left] <= Right[ind_Right])
+		if (Left[ind_Left] < Right[ind_Right])
 		{
 			array[ind_Array] = Left[ind_Left];
 			ind_Left++;
@@ -72,7 +72,7 @@ void merge(char ** array, size_t left, size_t middle, size_t right)
 
 	while (ind_Left < len_left && ind_Right < len_right)
 	{
-		if (strlen(Left[ind_Left]) <= strlen(Right[ind_Right]))
+		if (strlen(Left[ind_Left]) < strlen(Right[ind_Right]))
 		{
 			array[ind_Array] = Left[ind_Left];
 			ind_Left++;
