@@ -7,12 +7,6 @@
 
 using namespace std;
 
-template<typename T> bool comp(T a, T b)
-{
-    return a < b;
-}
-
-//template<>bool comp<char *>(char *a, char *b)
 
 template<typename T>
 void merge(T *arr,size_t n, size_t l, size_t r) {
@@ -31,9 +25,27 @@ void merge(T *arr,size_t n, size_t l, size_t r) {
     }
   }
   for (size_t i=l; i<=r; i++) arr[i]=mas[i];
+delete []mas;
+}
+template<>
+void merge(char **arr,size_t n, size_t l, size_t r) {
+  char **mas=new char*[n];
+  size_t mid=(l+r)/2,start=l,fin=mid+1; 
+  for(size_t i=l; i<=r; i++) {
+    if ((start<=mid) && ((fin>r) || (strlen(arr[start]) < strlen(arr[fin]))))
+    {
+      mas[i]=arr[start];
+      start++;
+    }
+    else
+    {
+      mas[i]=arr[fin];
+      fin++;
+    }
+  }
+  for (size_t i=l; i<=r; i++) arr[i]=mas[i];
 
 }
-
 
 template<typename T>
 void msort(T arr, size_t n, size_t l = 0, size_t r = -1) {
