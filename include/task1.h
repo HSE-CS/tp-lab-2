@@ -35,32 +35,32 @@ void msort(T arr, const size_t size)
     {
         if ( less(arr[left_pos], arr[right_pos]) )
         {
-            tmp_arr[tmp_arr_pos++] = std::move(arr[left_pos]);
+            tmp_arr[tmp_arr_pos++] = arr[left_pos];
             left_pos++;
         }
         else
         {
-            tmp_arr[tmp_arr_pos++] = std::move(arr[right_pos]);
+            tmp_arr[tmp_arr_pos++] = arr[right_pos];
             right_pos++;
         }
 
         if (left_pos == left_size)
         {
             for (;right_pos < size; right_pos++)
-                tmp_arr[tmp_arr_pos++] = std::move(arr[right_pos]);
+                tmp_arr[tmp_arr_pos++] = arr[right_pos];
             break;
         }
 
         if (right_pos == size)
         {
             for (; left_pos < left_size; left_pos++)
-                tmp_arr[tmp_arr_pos++] = std::move(arr[left_pos]);
+                tmp_arr[tmp_arr_pos++] = arr[left_pos];
             break;
         }
     }
     
     for ( size_t i = 0; i < size; i++)
-        arr[i] = std::move(tmp_arr[i]);
+        arr[i] = tmp_arr[i];
 
     delete[] tmp_arr;
 }
