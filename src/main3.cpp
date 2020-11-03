@@ -4,7 +4,7 @@
 int main() {
     const size_t n = 5;
     int arr[n]{1, 2, 3, 4, 5};
-    map <int, n> (arr, change);
+    map <int, n> (arr, changes);
     for (int i : arr)
         std::cout << i << " ";
 

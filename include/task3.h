@@ -8,7 +8,7 @@ void map(T* arr, T(*change)(T)){
 }
 
 template <typename T>
-T change(T a) {
+T changes(T a) {
     return a + 1;
 }
 #endif //TASK1_TASK3_H
