@@ -12,7 +12,7 @@ template <> bool comp(char* a, char* b)
 
 template <typename T> void merge(T* a, size_t left, size_t mid, size_t right)
 {
-	T* buf = new T[right];
+	T* buf = new T[right + 1];
 
 	for (int i = left; i <= right; i++)
 		buf[i] = a[i];
