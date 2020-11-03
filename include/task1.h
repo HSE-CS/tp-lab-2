@@ -7,7 +7,7 @@ template <typename T> bool comp(T a, T b)
 
 template <> bool comp(char* a, char* b)
 {
-	return (strlen(a) >= strlen(b));
+	return (strlen(a) < strlen(b));
 }
 
 template <typename T> void merge(T* a, size_t left, size_t mid, size_t right)
