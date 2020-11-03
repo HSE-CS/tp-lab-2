@@ -6,15 +6,21 @@
 using namespace std;
 
 template <typename S>
-bool comp(S a, S b)
+bool compare(S a, S b)
 {
 	return a < b;
 }
 template<>
-bool comp<char*>(char* a, char* b) //не заходит сюда??
+bool compare<char*>(char* a, char* b) 
 {
 	return strlen(a) < strlen(b);
 }
+template<>
+bool compare<const char*>(const char* a,const char* b) 
+{
+	return strlen(a) < strlen(b);
+}
+
 
 template <typename T>
 void msort(T arr[], int N) 
@@ -33,7 +39,7 @@ void msort(T arr[], int N)
 	int ir=l;
 	while (il<l && ir < N)
 	{
-		if (comp(arr[il],arr[ir]))
+		if (compare(arr[il],arr[ir]))
 		{
 			result[k] = arr[il];
 			il++;
