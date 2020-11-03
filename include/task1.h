@@ -12,10 +12,7 @@ template<typename T> bool comp(T a, T b)
     return a < b;
 }
 
-template<>bool comp<char *>(char *a, char *b)
-{
-    return strlen(a) < strlen(b);
-}
+//template<>bool comp<char *>(char *a, char *b)
 
 template<typename T>
 void merge(T *arr,size_t n, size_t l, size_t r) {
