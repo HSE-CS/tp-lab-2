@@ -1,28 +1,12 @@
-#ifndef TASK1_TASK2_H
-#define TASK1_TASK2_H
+#include <iostream>
 
-#include <cstring>
-#include <cstdlib>
-#include <stdlib.h>
+template <typename T, size_t N>
+T* createArr(T(*gen)()) {
+	T* arr = new T[N];
 
-template <class T, size_t size>
-T* createArr(T(*gen) ()) {
-	T* newarr = new T[size];
+	for (size_t i = 0; i < N; i++) {
+		arr[i] = gen();
+	}
 
-	for (int i = 0; i < size; i++)
-		newarr[i] = gen();
-
-	return newarr;
+	return arr;
 }
-
-template <class T>
-T generator() {
-	return rand() % 89 + 66;
-}
-
-template <>
-char generator() {
-	return '0';
-}
-
-#endif
