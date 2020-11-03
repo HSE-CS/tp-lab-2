@@ -5,7 +5,7 @@ template <typename T> bool comp(T a, T b)
 	return (a <= b);
 }
 
-template <typename T> bool comp(char* a, char* b)
+template <> bool comp(char* a, char* b)
 {
 	return (strlen(a) <= strlen(b));
 }
