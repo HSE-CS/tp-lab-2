@@ -1,18 +1,32 @@
+#include <iostream>
 #include "task3.h"
 //Написать шаблонную функцию map, принимающую по ссылке массив элементов типа T и выполняющую преобразование
 // каждого элемента в соответетствии с шаблонной функцией change, указатель на которую передается в map.
+
+#define t1
+
+#ifdef t1
 //test 1
-const size_t n = 5;
-int arr[n]{1, 2, 3, 4, 5};
-lab2::map<int, n>(arr, lab2::change);
+int main()
+{
+    const size_t n = 5;
+    int arr[n]{1, 2, 3, 4, 5};
+    lab2::map<int, n>(arr, lab2::change);
 
-int expected[n]{2, 3, 4, 5, 6};
+    int expected[n]{2, 3, 4, 5, 6};
 
-for(size_t i = 0; i < n; i++)
-EXPECT_EQ(expected[i], arr[i]);
+    for(size_t i = 0; i < n; i++)
+        EXPECT_EQ(expected[i], arr[i]);
+
+}
+#endif
+
+#ifdef t2
 
 //test 2
-const size_t n = 5;
+int main()
+{
+    const size_t n = 5;
 double arr[5]{1, 2.2, 3.3, 4.4, 5};
 lab2::map<double, n>(arr, lab2::change);
 
@@ -21,8 +35,15 @@ double expected[n]{2, 3.2, 4.3, 5.4, 6};
 for(size_t i = 0; i < n; i++)
 EXPECT_EQ(expected[i], arr[i]);
 
+}
+#endif
+
+#ifdef t3
+
 //test 3
-const size_t n = 5;
+int main()
+{
+    const size_t n = 5;
 char arr[n]{'1', '2', '3', '4', '5'};
 lab2::map<char, n>(arr, lab2::change);
 
@@ -31,8 +52,16 @@ char expected[n]{'2', '3', '4', '5', '6'};
 for(size_t i = 0; i < n; i++)
 EXPECT_EQ(expected[i], arr[i]);
 
+
+}
+#endif
+
+#ifdef t4
+
 //test 4
-const size_t n = 5;
+int main()
+{
+    const size_t n = 5;
 char* arr[n];
 char* expected[n];
 for(size_t i = 0; i < n; i++)
@@ -62,3 +91,6 @@ for(size_t i = 0; i < n; i++)
 delete[] arr[i];
 delete[] expected[i];
 }
+
+}
+#endif
