@@ -18,8 +18,8 @@ template <> bool comp(char* a, char* b)
 }
 
 template<typename T>
-void merge(T *arr,size_t n, size_t l, size_t r) {
-  T *mas=new T[n];
+void merge(T *arr, size_t l, size_t r) {
+  T *mas=new T[r+1];
   size_t mid=(l+r)/2,start=l,fin=mid+1; 
   for(size_t i=l; i<=r; i++) {
     if ((start<=mid) && ((fin>r) || (comp(arr[start],arr[fin]))))
@@ -46,7 +46,7 @@ void msort(T arr, size_t n, size_t l = 0, size_t r = -1) {
       int mid=(l+r)/2;
       msort(arr,mid+1,0,mid);
       msort(arr,n-mid-1,mid+1,r);
-      merge(arr,n,l,r);
+      merge(arr,l,r);
     }
 }
 
