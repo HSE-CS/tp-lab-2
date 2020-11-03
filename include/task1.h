@@ -10,7 +10,6 @@ template <typename T> void merge(T * arr, int l, int m, int r)
     int n1 = m - l + 1;
     int n2 = r - m;
 
-
     T L[n1], R[n2];
 
     for(int i = 0; i < n1; i++)
@@ -18,7 +17,6 @@ template <typename T> void merge(T * arr, int l, int m, int r)
 
     for(int j = 0; j < n2; j++)
         R[j] = arr[m + 1 + j];
-
 
     int i = 0;
     int j = 0;
@@ -54,6 +52,54 @@ template <typename T> void merge(T * arr, int l, int m, int r)
     }
 }
 
+template <> void merge(char ** arr, int l, int m, int r)
+{
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    char * L[n1];
+    char * R[n2];
+
+    for(int i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+
+    for(int j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+
+    int i = 0;
+    int j = 0;
+    int k = l;
+
+    while (i < n1 && j < n2)
+    {
+        if (strlen(L[i]) <= strlen(R[j]))
+        {
+            arr[k] = L[i];
+            i++;
+        }
+        else
+        {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1)
+    {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2)
+    {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
 
 template<typename T> void sort(T * arr, int l, int r)
 {
@@ -61,8 +107,8 @@ template<typename T> void sort(T * arr, int l, int r)
     {
         int m = l + (r - l) / 2;
 
-        (arr, l, m);
-        (arr, m + 1, r);
+        sort(arr, l, m);
+        sort(arr, m + 1, r);
 
         merge(arr, l, m, r);
     }
