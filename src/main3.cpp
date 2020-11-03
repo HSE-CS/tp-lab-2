@@ -1,5 +1,10 @@
 #include "task3.h"
 
+template<class T>
+T change(T val) {
+    return val + 1;
+}
+
 int main() {
     const size_t n = 5;
     int arr[n]{1, 2, 3, 4, 5};
