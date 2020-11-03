@@ -51,7 +51,7 @@ void mergesort(T* a, size_t left, size_t right)
 			j++;
 		}
 	}
-	
+	delete[] buf;
 	return;
 }
 
