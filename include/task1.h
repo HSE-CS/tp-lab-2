@@ -1,5 +1,5 @@
 #pragma once
-#include <string>
+#include <cstring>
 template <typename T> bool comp(T a, T b)
 {
 	return (a <= b);
