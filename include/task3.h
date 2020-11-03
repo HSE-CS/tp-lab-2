@@ -9,8 +9,3 @@ template<typename T, unsigned int arrSize> void map( T (&initialArr)[arrSize], T
 }
 
 #endif
-
-template<typename E> E square(E x)
-{
-	return x*x;
-}
