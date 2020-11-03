@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
-#ifndef TASK_H
-#define TASK_H
+#ifndef TASK1_H
+#define TASK1_H
 #include <cstring>
 
 using namespace std;

@@ -14,10 +14,19 @@ int main()
 		cout << arr[i] << ' ';
 	cout << endl;
 	delete[] arr;
-	char* arrs[n] {(char*)"lalala\0", (char*)"la\0", (char*)"lala\0", (char*)"lalal\0", (char*)"l\0", (char*)"lalal\0"};
+
+	char* arrs[n] {(char*)"lalala", (char*)"la", (char*)"lala", (char*)"lalal", (char*)"l", (char*)"lalal"};
 	msort(arrs, n);
 	for (auto& i : arrs)
 		cout << i << "\n";
 	cout << endl;
+
+	double val[n]{ 4.0, 3.0, 2.4, 2.5, 2.1, -1 };
+	msort(val, n);
+	for (size_t i = 0; i < n; i++)
+		cout << val[i] << ' ';
+	cout << endl;
+
+
 	return 0;
 }
