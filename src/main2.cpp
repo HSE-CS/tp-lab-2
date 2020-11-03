@@ -3,6 +3,12 @@
 
 using namespace std;
 
+template <typename T>
+T gen()
+{
+    return 2;
+}
+
 int main()
 {
 /*    const size_t N = 5;

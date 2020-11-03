@@ -11,10 +11,4 @@ T* createArr(T(*gen) ())
     return array;
 }
 
-template <typename T>
-T gen()
-{
-    return '0';
-}
-
 #endif //TASK1_TASK2_H
