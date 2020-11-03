@@ -79,7 +79,7 @@ void merge(char **array, size_t left, size_t middle, size_t right) {
 }
 
 template<typename T>
-void msort(T *array, size_t size, size_t left = 0, size_t right = 0) {
+void msort(T array, size_t size, size_t left = 0, size_t right = 0) {
     if (size != 0) {
         msort(array, 0, 0, size - 1);
     }
