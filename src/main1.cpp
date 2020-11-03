@@ -14,5 +14,6 @@ int main(){
     for (size_t i=0; i<n;++i)
         cout << arr[i] << '\t';
     cout<<endl;
+        
     return 0;
 }
