@@ -8,9 +8,4 @@ void map(T array[], T(*change)(T))
         array[i] = change(array[i]);
 }
 
-template <typename T> T change(T i)
-{
-    return ++i;
-}
-
 #endif //TASK1_TASK3_H

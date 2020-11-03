@@ -3,6 +3,12 @@
 
 using namespace std;
 
+template <typename T>
+T change(T i)
+{
+    return ++i;
+}
+
 int main()
 {
     /*const size_t size = 5;
