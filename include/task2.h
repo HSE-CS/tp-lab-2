@@ -4,10 +4,14 @@
 
 #ifndef TASK1_TASK2_H
 #define TASK1_TASK2_H
-#include <iostream>
-#include <typeinfo>
 
-template<typename T, std::size_t size>
+#include <typeinfo>
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+template<typename T, size_t size>
 T *createArr(T (*generateFunk)()) {
     T *array = new T[size];
     for (size_t iter = 0; iter < size; iter++)

@@ -12,7 +12,7 @@ int main() {
     const size_t size = 5;
     int* array = new int[size]{1,23, -127799,1223, -2222};
     map<int, size>(array, change2);
-    for (size_t i = 0; i < size; ++i) {
+    for (size_t i = 0; i < size; i++) {
         cout << array[i] << endl;
     }
     return 0;
