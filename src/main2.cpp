@@ -2,7 +2,7 @@
 // Created by sharg on 03.11.2020.
 //
 
-#include <iostream>
+
 #include "task2.h"
 using namespace std;
 
