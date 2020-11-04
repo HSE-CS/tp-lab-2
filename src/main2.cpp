@@ -5,7 +5,26 @@
 #include "task2.h"
 #include <iostream>
 
+template<class T>
+T gen()
+{
+    static int k = 48;
+    return k++;
+}
 
+template<>
+char* gen()
+{
+    static unsigned k = 0;
+    k++;
+    char* s = new char[k + 1];
+
+    for (int i = 0; i < k; i++)
+        s[i] = '0' + i;
+    s[k] = '\0';
+
+    return s;
+}
 
 int main(){
 
