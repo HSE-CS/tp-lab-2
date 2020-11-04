@@ -122,7 +122,7 @@ void msort(T* mas, size_t n , size_t l = 0, size_t r = 0)
 	if (n != 0) msort(mas, 0, 0, n - 1);
 
 	size_t m = l + (r - l) / 2;
-	size_t t = 0;
+	T t = 0;
 
 	if (l < r)
 	{
