@@ -22,4 +22,17 @@ char* gen()
 
     return s;
 }
+
+template<typename T, size_t n>
+T* createArr(T (*gen)())
+{
+    T * arr = new T [n];
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = gen();
+        std::cout << arr[i] << " ";
+    }
+    return arr;
+}
+
 #endif //TASK1_TASK2_H
