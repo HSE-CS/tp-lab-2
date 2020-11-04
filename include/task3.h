@@ -2,7 +2,7 @@
 
 
 template<typename T, size_t s >
-void map(T* mas, T(*change)())
+void map(T* mas, T(*change)(T))
 {
 
 
@@ -10,5 +10,13 @@ void map(T* mas, T(*change)())
 		mas[i] = change(mas[i]);
 
 
+
+}
+
+template<typename T>
+T change(T x)
+{
+
+	return x - 3;
 
 }
