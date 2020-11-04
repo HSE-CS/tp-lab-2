@@ -15,47 +15,95 @@
 using namespace std;
 
 template <typename T> void merging(T array[], int arr_s, int lef, int rig){
-    int pivot, st, fin;
-    int *arr = new int[arr_s];
-    pivot = (lef+rig) / 2;
+    int pivot = 0;
+    int st = 0;
+    int fin = 0;
+    int *arr=new int[arr_s];
+    pivot = (lef + rig)/2;
     st = lef;
     fin = pivot + 1;
-    for(int i = lef; i<=rig;i++)
-    {
-        if(fin>rig || array[st] < array[fin]){
-            if(st<=pivot)
+
+    for(int i = lef; i <=rig; i++){
+        if(((fin > rig) || (array[st] < array[fin])))
+        {
+            if((st <= pivot) )
             {
                 arr[i] = array[st];
                 st++;
             }
-        }else{
+        }else
+        {
             arr[i] = array[fin];
             fin++;
         }
-        for(int i = lef; i <=rig; i++)
-        {
-            array[i] = arr[i];
-        }
-
+    }
+    for(int i = lef; i <=rig; i++)
+    {
+        array[i] = arr[i];
     }
 }
 
+template <> void merging(char **array, int arr_s, int lef, int rig){
+    int pivot = 0;
+    int st = 0;
+    int fin = 0;
+    char** arr = new char*[arr_s];
+    pivot = (lef + rig)/2;
+    st = lef;
+    fin = pivot + 1;
+
+    for(int i = lef; i <= rig; i++){
+        if((fin > rig) || (strlen(array[st]) < strlen(array[fin])))
+        {
+            if(st <= pivot)
+            {
+                arr[i] = array[st];
+                st++;
+            }
+
+        }else
+        {
+            arr[i] = array[fin];
+            fin++;
+        }
+    }
+    for(int i = lef; i <= rig; i++)
+    {
+        array[i] = arr[i];
+    }
+}
+
+template <typename T> void MergeSort(T array[], int size, int st, int fin)
+{
+
+    if(st < fin)
+    {
+        MergeSort(array, size, st, (st+fin)/2);
+        MergeSort(array, size, (st+fin)/2+1, fin);
+        merging(array, size , st, fin);
+    }
+
+}
+
+template <> void MergeSort(char **array, int size, int st, int fin)
+{
+
+    if(st < fin)
+    {
+        MergeSort(array, size, st, (st+fin)/2);
+        MergeSort(array, size, (st+fin)/2+1, fin);
+        merging(array, size , st, fin);
+    }
+
+}
 
 template<typename T> void msort(T array[], int arr_s, int lef = 0, int rig = 0){
 
-    if(arr_s != 0 && rig == 0)
+    if (arr_s != 0)
     {
-        rig = arr_s - 1;
-        arr_s = 0;
+        MergeSort(array, arr_s, lef, arr_s - 1);
     }
 
-    if(lef < rig)
-    {
-        cout<<"here"<<endl;
-        msort<T>(array, arr_s, lef, (rig+lef)/2);
-        msort<T>(array, arr_s, (rig+lef)/2 + 1, rig);
-        merging(array, arr_s, lef, rig);
-    }
 }
 
 
