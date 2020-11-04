@@ -1,6 +1,8 @@
 #ifndef TASK1_H
 #define TASK1_H
 
+#include <string.h>
+
 template <typename T>
 bool cmp(T left, T right) {
 	return left < right;
