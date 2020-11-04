@@ -1,4 +1,16 @@
 #pragma once
+#include <cstring>
+
+template<typename T>
+bool less(T a, T b)
+{
+    return a < b;
+}
+template<>
+bool less<char*>(char* a, char*b)
+{
+    return strlen(a) < strlen(b);
+}
 
 template<typename T>
 void msort(T arr, const size_t size)
@@ -21,7 +33,7 @@ void msort(T arr, const size_t size)
 
     while (left_pos < left_size || right_pos < size)
     {
-        if (arr[left_pos] < arr[right_pos])
+        if ( less(arr[left_pos], arr[right_pos]) )
         {
             tmp_arr[tmp_arr_pos++] = std::move(arr[left_pos]);
             left_pos++;
@@ -52,3 +64,4 @@ void msort(T arr, const size_t size)
 
     delete[] tmp_arr;
 }
+
