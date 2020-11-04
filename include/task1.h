@@ -94,7 +94,7 @@ void msort(T arr[], unsigned size, unsigned left = 0, unsigned right = 0)
 }
 
 template <> 
-void msort<char**>(char** arr, unsigned size, unsigned left = 0, unsigned right = 0)
+void msort<char *>(char* arr[], unsigned size, unsigned left, unsigned right)
 {
 	if (right == 0 && size != 0)
 	{
@@ -105,8 +105,8 @@ void msort<char**>(char** arr, unsigned size, unsigned left = 0, unsigned right 
 	if (right > left)
 	{
 		unsigned pivot = left + (right - left) / 2;
-		msort(arr, size, left, pivot);
-		msort(arr, size, pivot + 1, right);
+		msort<char *>(arr, size, left, pivot);
+		msort<char *>(arr, size, pivot + 1, right);
 		merge(arr, left, pivot, right);
 	}
 }
