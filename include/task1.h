@@ -1,9 +1,6 @@
 #ifndef LAB2_TASK1_H
 #define LAB2_TASK1_H
 
-#include <cstring>
-#include <iterator>
-#include <utility>
 
 template <typename T>
 void msort (T* arr, size_t size) {
