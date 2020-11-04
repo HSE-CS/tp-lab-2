@@ -13,8 +13,8 @@ void map(T* mas, T(*change)(T))
 
 }
 
-template<typename T>
-T change(T x)
+template< class T>
+T change_func(T x)
 {
 
 	return x - 3;
