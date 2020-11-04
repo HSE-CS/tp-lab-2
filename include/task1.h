@@ -1,5 +1,8 @@
 #pragma once
 
+#include <iostream>
+#include <cstring>
+
 template<typename T>
 void merge(T* v1, T* v2, int l1, int l2);
 template <typename T>
