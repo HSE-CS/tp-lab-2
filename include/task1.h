@@ -11,7 +11,7 @@ template <typename T> T* merge(T* arr1, T* arr2, size_t size1, size_t size2) {
 		if (*arr1 < *arr2)
 		{
 			res[res_ind] = *arr1;
-			arr1++;
+			++arr1;
 			--size1;
 		}
 		else
@@ -50,7 +50,7 @@ template<> char** merge<char*>(char** arr1, char** arr2, size_t size1, size_t si
 		if (strlen(*arr1) < strlen(*arr2))
 		{
 			res[res_ind] = *arr1;
-			arr1++;
+			++arr1;
 			--size1;
 		}
 		else
@@ -88,7 +88,7 @@ template <typename T> void msort(T* arr, size_t size) {
 			{
 				break;
 			}
-			size2 = (left + 2 * size1 > size) ? (size - (left + size1)) : size1; //
+			size2 = (left + 2 * size1 > size) ? (size - (left + size1)) : size1;
 			arr1 = merge(arr + left, arr + left + size1, size1, size2);
 			for (size_t i = 0; i < size1 + size2; ++i)
 			{
@@ -111,7 +111,7 @@ template<> void msort<char*>(char** arr, size_t size) {
 			{
 				break;
 			}
-			size2 = (left + 2 * size1 > size) ? (size - (left + size1)) : size1; //
+			size2 = (left + 2 * size1 > size) ? (size - (left + size1)) : size1;
 			arr1 = merge<char*>(arr + left, arr + left + size1, size1, size2);
 			for (size_t i = 0; i < size1 + size2; ++i)
 			{
