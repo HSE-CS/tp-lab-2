@@ -3,6 +3,11 @@
 #include <iostream>
 #include <stdlib.h>
 
+template <typename T> T gen()
+{
+	return 0;
+}
+
 int main()
 {
 	const int n = 10;

@@ -1,5 +1,10 @@
 #include "task3.h"
 
+template <typename T> T change(T val)
+{
+	return val + 2;
+}
+
 int main()
 {
 	const int n = 10;
