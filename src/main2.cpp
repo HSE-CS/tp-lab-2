@@ -7,7 +7,7 @@ int main()
     const size_t n = 5;
 
     //test 1
-    int * arr1 = createArr<int, n>(gen);
+    int * arr1 = createArr<int, n>(gener);
 
     for (int i = 0; i < n; i++) {
         std::cout << arr1[i] << ' ';

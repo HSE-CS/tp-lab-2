@@ -10,7 +10,7 @@ int main()
 {
     const size_t n = 5;
     int arr1[n]{1, 2, 3, 4, 5};
-    map<int, n>(arr1, change);
+    map<int, n>(arr1, changed);
     for(int i : arr1)
         std::cout << i << ' ';
 

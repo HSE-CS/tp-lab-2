@@ -5,14 +5,14 @@
 #ifndef TASK1_TASK2_H
 #define TASK1_TASK2_H
 template<class T>
-T gen()
+T gener()
 {
     static int t = 48;
     return t++;
 }
 
 template<>
-char* gen()
+char* gener()
 {
     static unsigned t = 0;
     t++;
@@ -26,12 +26,12 @@ char* gen()
 }
 
 template<typename T, size_t n>
-T* createArr(T (*gen)())
+T* createArr(T (*gener)())
 {
     T * arr = new T [n];
     for (int i = 0; i < n; i++)
     {
-        arr[i] = gen();
+        arr[i] = gener();
     }
     return arr;
 }
