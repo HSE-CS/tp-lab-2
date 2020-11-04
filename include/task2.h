@@ -3,9 +3,9 @@
 
 template <typename T, size_t size> T* createArr(T (*fun) ()) {
 	T* arr = new T[size]{ 0 };
-	for (auto& it : arr)
+	for (size_t i = 0; i < size; i++)
 	{
-		it = fun();
+		arr[i] = fun();
 	}
 	return arr;
 }

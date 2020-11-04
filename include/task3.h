@@ -2,9 +2,9 @@
 #define TASK3_H
 
 template <typename T, size_t size> void map(T(&arr)[size], T(*fun)(T)) {
-	for (auto& it : arr)
+	for (size_t i = 0; i < size; i++)
 	{
-		it = fun(it);
+		arr[i] = fun(arr[i]);
 	}
 }
 
