@@ -21,10 +21,9 @@ char* changed(char* val)
 template<typename T, size_t n>
 void map (T* arr, T (*changed)(T))
 {
-    T mas[n];
     for(size_t i = 0; i < n; i++)
     {
-        mas[i] = changed(arr[i]);
+       arr[i] = changed(arr[i]);
     }
 }
 #endif //TASK1_TASK3_H
