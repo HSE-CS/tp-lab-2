@@ -4,10 +4,10 @@
 
 int main() {
 
-    int arr[5]{3, 6, 2, 6, 1};
-    msort(arr, 5);
+    float arr[4]{3.1, 6.2, 2.4, 6.5};
+    msort(arr, 4);
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
         std::cout << arr[i] << " ";
 
     char *val[6]{(char *) "ffff", (char *) "fff2", (char *) "f", (char *) "ff", (char *) "vvv", (char *) "fffrr"};
