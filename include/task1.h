@@ -47,7 +47,7 @@ template <typename T> T* merge(T* arr1, size_t len1, T* arr2, size_t len2)
 	}
 	return result;
 }
-template <typename T> T* msort(T *arr, size_t size)
+template <typename T> T* mergesort(T *arr, size_t size)
 {
 	if (size <= 1)
 		return arr;
@@ -59,7 +59,16 @@ template <typename T> T* msort(T *arr, size_t size)
 		left[i] = arr[i];
 		right[i] = arr[mid+i];
 	}
-	return merge(msort(left, mid), mid, msort(right, size-mid), size-mid);
+	return merge(mergesort(left, mid), mid, mergesort(right, size-mid), size-mid);
+}
+
+template <typename T> void msort(T* arr, size_t size)
+{
+	T* result = mergesort(arr, size);
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] = result[i];
+	}
 }
 
 #endif

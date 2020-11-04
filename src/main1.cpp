@@ -12,10 +12,10 @@ int main()
 	double expected[n]{ -1, 2.1, 2.4, 2.5, 3.0, 4.0 };
 	/*char* val[n]{ (char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr" };
 	char* expected[n]{ (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fff2", (char*)"ffff", (char*)"fffrr" };*/
-	double* res = msort(val, n);
+	msort(val, n);
 	for (size_t i = 0; i < n; i++)
 	{
-		std::cout << res[i]<<" ";
+		std::cout << val[i]<<" ";
 	}
 
 }
