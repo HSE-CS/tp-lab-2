@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstring>
+#include <string>
 
 #ifndef TASK1_TASK2_H
 #define TASK1_TASK2_H
@@ -30,7 +32,6 @@ T* createArr(T (*gen)())
     for (int i = 0; i < n; i++)
     {
         arr[i] = gen();
-        std::cout << arr[i] << " ";
     }
     return arr;
 }

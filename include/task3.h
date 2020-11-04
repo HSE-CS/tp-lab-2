@@ -25,7 +25,6 @@ void map (T* arr, T (*change)(T))
     for(size_t i = 0; i < n; i++)
     {
         mas[i] = change(arr[i]);
-        std::cout << mas[i] << " ";
     }
 }
 #endif //TASK1_TASK3_H
