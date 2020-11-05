@@ -51,11 +51,14 @@ template<> void merge(char** initialArr, int firstInd, int lastInd)
 }
 
 
-template<typename T> void msort(T* initialArr, int lastIndint, int firstInd = 0)
+template<typename T> void msort(T* initialArr, int arrSize, int firstInd = 0, int lastInd = 0)
 {
-	if (firstInd<lastInd) {
-		msort(initialArr, firstInd, (firstInd + lastInd) / 2);
-		msort(initialArr, (firstInd + lastInd) / 2 + 1, lastInd);
+	if (arrSize > 0) {
+		msort(initialArr, 0, firstInd, arrSize - 1);
+	}
+	if (firstInd < lastInd) {
+		msort(initialArr, 0, firstInd, (firstInd + lastInd) / 2);
+		msort(initialArr, 0, (firstInd + lastInd) / 2 + 1, lastInd);
 		merge(initialArr, firstInd, lastInd);
 	}
 
