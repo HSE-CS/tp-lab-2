@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cstring>
 
-bool min(unsigned int a, unsigned int b) {
+unsigned int min(unsigned int a, unsigned int b) {
 	if (a < b) {
 		return a;
 	}
@@ -12,6 +12,8 @@ bool min(unsigned int a, unsigned int b) {
 
 template<typename T>
 T* msort(T* arr, unsigned int n) {
+
+	T* _res = new T[n];
 
 	for (size_t i = 1; i < n; i *= 2) {
 		for (size_t j = 0; j < n - i; j += 2 * i) {
@@ -22,7 +24,6 @@ T* msort(T* arr, unsigned int n) {
 			unsigned int middle = j + i;
 			unsigned int right = min(j + 2 * i, n);
 			unsigned int left = j;
-			T* _res = new T[right - left];
 			while ((_iter1 + left < middle) && (_iter2 + middle < right)) {
 
 				if (arr[left + _iter1] < arr[middle + _iter2]) {
@@ -54,16 +55,22 @@ T* msort(T* arr, unsigned int n) {
 
 template<>
 char** msort<char*>(char** arr, unsigned int n) {
-	
+
 	//New copy array
-	char** point = new char*[n];
+	char** point = new char* [n];
 	for (size_t i = 0; i < n; ++i) {
 		point[i] = new char[n];
 	}
 	for (size_t i = 0; i < n; ++i) {
 		strcpy(point[i], arr[i]);
 	}
-	
+
+	//Array for sort
+	char** _res = new char* [n];
+	for (size_t k = 0; k < n; ++k) {
+		_res[k] = new char[n];
+	}
+
 	//Algorithm
 	for (size_t i = 1; i < n; i *= 2) {
 		for (size_t j = 0; j < n - i; j += 2 * i) {
@@ -73,14 +80,9 @@ char** msort<char*>(char** arr, unsigned int n) {
 			unsigned int middle = j + i;
 			unsigned int right = min(j + 2 * i, n);
 			unsigned int left = j;
-			//Array for sort
-			char** _res = new char* [right - left];
-			for (size_t k = 0; k < right - left; ++k) {
-				_res[k] = new char[n];
-			}
 			//Merge
 			while ((_iter1 + left < middle) && (_iter2 + middle < right)) {
-				if ( strlen(point[left + _iter1]) < strlen(point[middle + _iter2]) ) {
+				if (strlen(point[left + _iter1]) < strlen(point[middle + _iter2])) {
 					strcpy(_res[_iter1 + _iter2], point[left + _iter1]);
 					_iter1++;
 				}
@@ -98,7 +100,7 @@ char** msort<char*>(char** arr, unsigned int n) {
 				strcpy(_res[_iter1 + _iter2], point[middle + _iter2]);
 				_iter2++;
 			}
-			
+
 			for (size_t w = 0; w < _iter1 + _iter2; ++w) {
 				strcpy(point[left + w], _res[w]);
 			}

@@ -4,7 +4,7 @@
 const unsigned int size = 6;
 int main() {
 
-	int* array = new int[size]{ 5, 4, 2, -1, 3, 1 };
+	int* array = new int[size] { 5, 4, 2, -1, 3, 1 };
 	char* a[size]{ (char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr" };
 
 	int* point1 = msort(array, size);
