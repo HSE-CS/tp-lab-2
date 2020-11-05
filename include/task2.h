@@ -1,5 +1,5 @@
-#ifndef TASK3_H
-#define TASK3_H
+#ifndef TASK2_H
+#define TASK2_H
 
 template<typename T, size_t arrSize> T* createArr(T (*gen)())
 {
