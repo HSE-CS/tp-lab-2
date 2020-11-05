@@ -1,15 +1,32 @@
+#include <iostream>
 #include "task2.h"
 
-int generator() {
-	int a = 0;
-	cin >> a;
-	return a;
+
+int gen()
+{
+	static int t = 0;
+	return t++;
 }
 
-int main() {
-	int* Arr = createArr<int, 5>(&generator);
-	for (int i = 0; i < 5; ++i) {
-		cout << Arr[i] << "\t";
-	}
+char* gen1()
+{
+	static unsigned t = 0;
+	t++;
+	char* s = new char[t + 1];
+
+	for (size_t i = 0; i < t; i++)
+		s[i] = '0' + i;
+	s[t] = '\0';
+
+	return s;
+}
+
+int main()
+{
+	char** array = createArr<char*, 5>(gen1);
+
+	for (int i = 0; i < 5; i++)
+		std::cout << array[i] << " ";
+
 	return 0;
 }
