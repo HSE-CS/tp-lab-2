@@ -61,7 +61,7 @@ void msort(T arr[], int N)
 	{
 		result[k] = arr[ir];
 		ir++;
-		k;
+		k++;
 	}
 
 	for (int i = 0; i < N; i++)
