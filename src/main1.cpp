@@ -20,10 +20,9 @@ int main()
 		strArr[i][strlen(strings[i])] = '\0';
 	}
 
-	msort(intsArr, 0, SIZE - 1);
-	msort(dArr, 0, SIZE - 1);
-	msort(charsArr, 0, SIZE - 1);
-	msort(strArr, 0, SIZE - 1);
+	msort(intsArr, SIZE);
+	msort(dArr, SIZE);
+	msort(strArr, SIZE);
 
 	for (int i = 0; i < SIZE; i++) {
 		cout << intsArr[i] << ' ';
