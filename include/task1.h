@@ -17,9 +17,10 @@ int comp(T a, T b){
 
 template<>
 int comp(char* a, char* b){
-    std::string s1 = a;
-    std::string s2 = b;
-    int dif = s1.length()-s2.length();
+//    std::string s1 = a;
+//    std::string s2 = b;
+//    int dif = s1.length()-s2.length();
+    int dif = strlen(a)-strlen(b);
     if (dif>0){
         return 1;
     }else if (dif<0){
