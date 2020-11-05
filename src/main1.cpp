@@ -9,7 +9,6 @@ int main()
 {
 	int *intsArr = new int[SIZE]{ 4, -5, 2, 0, 23, 68, -11, 4, 4, 3, 29, 1 };
 	double *dArr = new double[SIZE]{ 4.5, 2.9, -1.1, 0, 1, 23.6, 12, 70.03, 70.1, -3.4, 11, 11.2 };
-	char *charsArr = new char[SIZE+1]{ "JU3981zU#u&4" };
 	char *strings[SIZE] = { "taki", "kew", "iuwi8", "89tb", "654s", "_&^^5", "jr5", "jckxy", "7ftc", "j6", "gtuyxzdufyiu", "y7t865drt" };
 	char **strArr = new char*[SIZE];
 
@@ -37,17 +36,11 @@ int main()
 	cout << endl;
 
 	for (int i = 0; i < SIZE; i++) {
-		cout << charsArr[i] << ' ';
-	}
-	cout << endl;
-
-	for (int i = 0; i < SIZE; i++) {
 		cout << strArr[i] << endl;
 	}
 
 	delete[]intsArr;
 	delete[]dArr;
-	delete[]charsArr;
 	delete[]strArr;
 
 	return 0;
