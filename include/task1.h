@@ -54,7 +54,7 @@ T* msort(T* arr, unsigned int n) {
 }
 
 template<>
-char** msort<char*>(char** arr, unsigned int n) {
+void msort<char*>(char** arr, unsigned int n) {
 
 	//New copy array
 	char** point = new char* [n];
@@ -106,6 +106,10 @@ char** msort<char*>(char** arr, unsigned int n) {
 			}
 		}
 	}
-	return point;
+	
+	for (size_t i = 0; i < n; ++i){
+		strcpy(arr[i], point[i]);
+	}
+
 }
 
