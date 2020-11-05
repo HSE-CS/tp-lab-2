@@ -15,23 +15,3 @@ T* createArr(T (*ret_value)()) {
 
 	return array;
 }
-
-template<typename T>
-T gen() {
-	static T p = 48;
-	return p++;
-}
-template<>
-char* gen() {
-
-	static char p = 0;
-	p++;
-	char* _str = new char[p + 2];
-
-	for (size_t i = 0; i < p + 2; ++i){
-		_str[i] = 48 + i;
-	}
-	_str[p + 1] = '\0';
-
-	return _str;
-}
