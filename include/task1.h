@@ -51,7 +51,7 @@ template<> void merge(char** initialArr, int firstInd, int lastInd)
 }
 
 
-template<typename T> void msort(T* initialArr, int firstInd, int lastInd)
+template<typename T> void msort(T* initialArr, int lastIndint, int firstInd = 0)
 {
 	if (firstInd<lastInd) {
 		msort(initialArr, firstInd, (firstInd + lastInd) / 2);
