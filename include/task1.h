@@ -1,10 +1,14 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <cstring>
 
+bool min(unsigned int a, unsigned int b) {
+	if (a < b) {
+		return a;
+	}
+	return b;
+}
 
 template<typename T>
 T* msort(T* arr, unsigned int n) {
@@ -15,32 +19,32 @@ T* msort(T* arr, unsigned int n) {
 
 			unsigned int _iter1{ 0 };
 			unsigned int _iter2{ 0 };
-			std::vector<T> _res;
 			unsigned int middle = j + i;
-			unsigned int right = std::min(j + 2 * i, n);
+			unsigned int right = min(j + 2 * i, n);
 			unsigned int left = j;
+			T* _res = new T[right - left];
 			while ((_iter1 + left < middle) && (_iter2 + middle < right)) {
 
 				if (arr[left + _iter1] < arr[middle + _iter2]) {
-					_res.push_back(arr[left + _iter1]);
+					_res[_iter1 + _iter2] = arr[left + _iter1];
 					_iter1++;
 				}
 				else {
-					_res.push_back(arr[middle + _iter2]);
+					_res[_iter1 + _iter2] = arr[middle + _iter2];
 					_iter2++;
 				}
 			}
 
 			while (left + _iter1 < middle) {
-				_res.push_back(arr[left + _iter1]);
+				_res[_iter1 + _iter2] = arr[left + _iter1];
 				_iter1++;
 			}
 			while (middle + _iter2 < right) {
-				_res.push_back(arr[middle + _iter2]);
+				_res[_iter1 + _iter2] = arr[middle + _iter2];
 				_iter2++;
 			}
 
-			for (size_t w = 0; w < _res.size(); ++w) {
+			for (size_t w = 0; w < _iter1 + _iter2; ++w) {
 				arr[left + w] = _res[w];
 			}
 		}
@@ -67,7 +71,7 @@ char** msort<char*>(char** arr, unsigned int n) {
 			unsigned int _iter1{ 0 };
 			unsigned int _iter2{ 0 };
 			unsigned int middle = j + i;
-			unsigned int right = std::min(j + 2 * i, n);
+			unsigned int right = min(j + 2 * i, n);
 			unsigned int left = j;
 			//Array for sort
 			char** _res = new char* [right - left];

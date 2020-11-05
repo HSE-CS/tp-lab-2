@@ -16,14 +16,9 @@ T* createArr(T (*ret_value)()) {
 	return array;
 }
 
-template<typename E>
-E gen() {
-	static E p = 10;
-	return p++;
-}
-template<>
-char gen() {
-	static char p = 48;
+template<typename T>
+T gen() {
+	static T p = 48;
 	return p++;
 }
 template<>
