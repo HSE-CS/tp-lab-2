@@ -4,7 +4,7 @@
 int counter=47;
 
 template <class T>
-T gen() {
+T gens() {
     counter++;
     return (T)counter;
 }

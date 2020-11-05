@@ -6,7 +6,7 @@
 int main(){
     const size_t n = 5;
     char* arr;
-    arr = createArr<char, n>(gen);
+    arr = createArr<char, n>(gens);
 
     char *expected = new char[n]{48, 49, 50, 51, 52};
 

@@ -10,7 +10,7 @@ void map(T* mas, T(*change)(T)){
 }
 
 template <typename T>
-T change(T el) {
+T changes(T el) {
     return el + 1;
 }
 #endif
