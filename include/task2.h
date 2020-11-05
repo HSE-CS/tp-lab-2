@@ -1,4 +1,3 @@
-#define TASK2_H
 #include <iostream>
 #include <string.h>
 

@@ -8,6 +8,7 @@ int gen()
 	return t++;
 }
 
+
 char* gen1()
 {
 	static unsigned t = 0;
