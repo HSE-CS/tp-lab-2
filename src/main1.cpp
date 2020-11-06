@@ -16,7 +16,7 @@ int main()
       cin >> arr[i];
     }
 
-    msort(arr, buff, 0, n);
+    msort(arr, n);
 
     for (int i = 0; i < n; i++)
     {

@@ -1,6 +1,9 @@
 #include <string.h>
 #include <string>
 #include <cstring>
+#include <iostream>
+
+using namespace std;
 
 
 template <class T>
@@ -18,54 +21,74 @@ template <> bool comparasion <const char*> (const char* a, const char* b)
 
 
 template <typename T>
-void merge(T *array, T *buffer, int left, int right, int middle)
+T* merge(T* array, T *left_arr, T *right_arr, int left, int right)
 {
   int index_left = 0;
   int index_right = 0;
 
-  while ((left + index_left < middle) && (middle + index_right < right))
+  while ((index_left < left) && (index_right < right))
   {
-    if (comparasion(array[left + index_left], array[middle + index_right]))
+    if (comparasion(left_arr[index_left], right_arr[index_right]))
     {
-      buffer[index_left + index_right] = array[left + index_left];
+      array[index_left + index_right] = left_arr[index_left];
       index_left++;
     }
 
     else
     {
-      buffer[index_left + index_right] = array[middle + index_right];
+      array[index_left + index_right] = right_arr[index_right];
       index_right++;
     }
   }
 
-  while(left + index_left  < middle)
+  while(index_left  < left)
   {
-    buffer[index_left + index_right] = array[left + index_left];
+    array[index_left + index_right] = left_arr[index_left];
     index_left++;
   }
 
-  while(middle + index_right < right)
+  while(index_right < right)
   {
-    buffer[index_left  + index_right] = array[middle + index_right];
+    array[index_left  + index_right] = right_arr[index_right];
     index_right++;
-  }
-
-  for(int i = 0; i < index_left + index_right; ++i)
-  {
-    array[left + i] = buffer[i];
   }
 }
 
 template <typename T>
-void msort(T *array, T *buffer, int left, int right)
+void msort(T *arr, int n)
 {
-  if (right - left <= 1)
+  if (n  <= 1)
   {
     return;
   }
-  int middle = (right + left) / 2;
-  msort(array, buffer, left, middle);
-  msort(array, buffer, middle, right);
 
-  merge<T>(array, buffer, left, right, middle);
+  int left = n / 2;
+  int right = n - left;
+
+  T *left_arr = new int[left];
+  for (int i = 0; i < left; ++i)
+    left_arr[i] = arr[i];
+
+  T *right_arr = new int[right];
+  for (int i = 0; i < right; ++i)
+    right_arr[i] = arr[left + i];
+
+
+    // for (int i = 0; i < left; ++i)
+    //   cout << left_arr[i] << " ";
+    // cout << endl;
+    //
+    //
+    // for (int i = 0; i < right; ++i)
+    //   cout << right_arr[i] << " ";
+    // cout << endl;
+
+
+  T *buffer = new int[n];
+
+  msort(left_arr, left);
+  msort(right_arr, right);
+
+  merge<T>(arr, left_arr, right_arr, left, right);
+
 }
