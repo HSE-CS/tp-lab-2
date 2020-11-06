@@ -65,11 +65,11 @@ void msort(T *arr, int n)
   int left = n / 2;
   int right = n - left;
 
-  T *left_arr = new int[left];
+  T *left_arr = new T[left];
   for (int i = 0; i < left; ++i)
     left_arr[i] = arr[i];
 
-  T *right_arr = new int[right];
+  T *right_arr = new T[right];
   for (int i = 0; i < right; ++i)
     right_arr[i] = arr[left + i];
 
