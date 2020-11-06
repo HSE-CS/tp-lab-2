@@ -53,14 +53,7 @@ void msort(T* arr, size_t left, size_t right)
 {
     T temp;
     if (left<right)
-        if (right - left == 1) {
-            if (arr[right] < arr[left]) {
-                temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
-            }
-        }
-        else {
+    {
             msort(arr, left, left + (right - left) / 2);
             msort(arr, left + (right - left) / 2 + 1, right);
             merge(arr, left, right);

@@ -22,7 +22,7 @@ int main()
     }
     cout << endl;
 
-    char* s_arr[S]{ (char*)"m", (char*)"ma", (char*)"ma", (char*)"m" };
+    char* s_arr[S]{ (char*)"msssssss", (char*)"m", (char*)"mas", (char*)"ma" };
     msort(s_arr,0, S-1);
     for (int i = 0; i < S; i++) {
         cout << s_arr[i] << ' ';
