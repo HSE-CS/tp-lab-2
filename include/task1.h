@@ -64,8 +64,8 @@ void msort(T *array, T *buffer, int left, int right)
     return;
   }
   int middle = (right + left) / 2;
-  merge_sort(array, buffer, left, middle);
-  merge_sort(array, buffer, middle, right);
+  msort(array, buffer, left, middle);
+  msort(array, buffer, middle, right);
 
   merge<T>(array, buffer, left, right, middle);
 }
