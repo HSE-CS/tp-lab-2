@@ -87,19 +87,26 @@ template<> void msort(char** a, int N)
         to_sort_arr[i] = strlen(a[i]);
     }
 
-    char** new_a = new char*[N];
+   
     // sort strings length
     unsigned int* new_arr = msort_rec(to_sort_arr, index_arr, 0, N-1, N);
     // now we have sorted indexes = index_arr
     
     // create a sorted copy
+    char** new_a = new char*[N];
     for (int i = 0; i < N; i++){
         new_a[i] = new char[strlen(a[index_arr[i]])];
-        strcpy(new_a[i], a[index_arr[i]]);
+//        strcpy(new_a[i], a[index_arr[i]]);
+        new_a[i] = a[index_arr[i]];
     }
+    
+    // 1 0 3 2
+    
     //move to original array
     for(int i = 0; i < N; i++){
         a[i] = new_a[i];
+//        char* b = new_a[i];
+//        int z = 0;
     }
 //    //move to original array
 //    for (int i = 0; i < N; i++){
@@ -110,7 +117,7 @@ template<> void msort(char** a, int N)
     
     delete [] index_arr;
     delete [] to_sort_arr;
-//    delete [] new_a;
+    delete [] new_a;
     delete [] new_arr;
 }
 
