@@ -3,7 +3,7 @@
 #define TASK1_H
 #include <typeinfo>									 
 #include <iostream>	
-#include <string>
+#include <string.h>
 #include <algorithm>
 #include <cstddef>
 #include <iterator>
