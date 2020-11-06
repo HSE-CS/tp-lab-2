@@ -2,7 +2,7 @@
 #define TASK1_H
 
 #include<climits>
-#include<string>
+#include<string.h>
 
 
 template<class T>
