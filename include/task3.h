@@ -1,8 +1,6 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <cstring>
 
 template<typename T, size_t n>
