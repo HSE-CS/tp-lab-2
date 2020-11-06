@@ -14,7 +14,7 @@ bool comparasion(T a, T b)
 
 template <> bool comparasion <const char*> (const char* a, const char* b)
 {
-    return strcmp(a, b) < 0;
+    return (strlen(a) < strlen(b));
 }
 
 
