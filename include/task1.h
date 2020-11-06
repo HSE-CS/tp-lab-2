@@ -4,17 +4,17 @@
 #include <cstring>
 using namespace std;
 
-template<typename T>
+template <typename T>
 bool left_is_less(T a, T b){
     return a < b;
 }
 
-template<>
+template <>
 bool left_is_less(char* a, char* b){
     return (strlen(a) < strlen(b));
 }
 
-template<typename T> 
+template <typename T> 
 void msort(T* array, size_t size){
     if (size == 1) return;
     size_t lsize = size/2;
@@ -44,14 +44,12 @@ void msort(T* array, size_t size){
         }
     }
 
-    if (l == lsize){
+    if (l == lsize)
         for (int i = m; i < size; i++, r++)
             array[i] = rarray[r];
-    }
-    else{
+    else
         for (int i = m; i < size; i++, l++)
             array[i] = larray[l];
-    }
 
     delete[] larray;
     delete[] rarray;
