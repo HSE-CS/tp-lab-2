@@ -97,16 +97,20 @@ template<> void msort(char** a, int N)
         new_a[i] = new char[strlen(a[index_arr[i]])];
         strcpy(new_a[i], a[index_arr[i]]);
     }
-    
     //move to original array
-    for (int i = 0; i < N; i++){
-        a[i] = new char[strlen(new_a[i])];
-        strcpy(a[i], new_a[i]);
+    for(int i = 0; i < N; i++){
+        a[i] = new_a[i];
     }
+//    //move to original array
+//    for (int i = 0; i < N; i++){
+//        delete[] a[i];
+//        a[i] = new char[strlen(new_a[i])];
+//        strcpy(a[i], new_a[i]);
+//    }
     
     delete [] index_arr;
     delete [] to_sort_arr;
-    delete [] new_a;
+//    delete [] new_a;
     delete [] new_arr;
 }
 
