@@ -10,12 +10,12 @@
 #include <memory>
 
 
-void charmsort(char** arr, std::size_t n) {
+void charmsort(char** arr, size_t n) {
     if (n > 1) {
-        unsigned int left_border{ n / 2 }, right_border{ n - left_border };
+        size_t left_border{ n / 2 }, right_border{ n - left_border };
         charmsort(&arr[0], left_border);
         charmsort(&arr[left_border], right_border);
-        unsigned int lidx = 0, ridx = left_border, idx = 0;
+        size_t lidx = 0, ridx = left_border, idx = 0;
         char** tmp_arr{ 0 };
         tmp_arr = new char* [n];
         while (lidx < left_border || ridx < n)
@@ -55,7 +55,7 @@ void charmsort(char** arr, std::size_t n) {
 
 
 template <typename T>
-void msort(T arr[], unsigned int n) noexcept {
+void msort(T arr[], size_t n) noexcept {
     char* type = (char*)typeid(*arr).name();
 	if (type[0] == 'c') {
 		// TODO: sort
@@ -63,10 +63,10 @@ void msort(T arr[], unsigned int n) noexcept {
 	}
 	else {
         if (n > 1) {
-            unsigned int left_border{ n / 2 }, right_border{ n - left_border };
+            size_t left_border{ n / 2 }, right_border{ n - left_border };
             msort(&arr[0], left_border);
             msort(&arr[left_border], right_border);
-            unsigned int lidx = 0, ridx = left_border, idx = 0;
+            size_t lidx = 0, ridx = left_border, idx = 0;
             T* tmp_arr{ 0 };
             tmp_arr = new T[n];
             
