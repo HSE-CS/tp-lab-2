@@ -12,12 +12,9 @@ template <> bool compare <char*>(char* a, char* b) {
 }
 
 template<typename T>
-void merge(T arr[], int begin, int end)
+void merge(T arr[], size_t begin, size_t end)
 {
-    int i = begin,
-        t = 0,
-        mid = begin + (end - begin) / 2,
-        j = mid + 1;
+    size_t i = begin, t = 0, mid = begin + (end - begin) / 2, j = mid + 1;
         T* d= new T[end+1];
 
     while (i <= mid && j<= end) {
@@ -52,7 +49,7 @@ void merge(T arr[], int begin, int end)
 
 
 template<typename T>
-void msort(T* arr, int left, int right)
+void msort(T* arr, size_t left, size_t right)
 {
     T temp;
     if (left<right)
