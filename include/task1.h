@@ -12,9 +12,9 @@
 //}
 
 template<typename T>
-void merge(T arr[],size_t begin, size_t end)
+void merge(T arr[],size_t N)
 {
-    size_t i = begin, t = 0, mid = begin + (end - begin) / 2, j = mid + 1;
+    size_t begin = 0, end = N - 1, i = begin, t = 0, mid = begin + (end - begin) / 2, j = mid + 1;
         T* d= new T[end+1];
 
     while (i <= mid && j<= end) {
@@ -48,10 +48,10 @@ void merge(T arr[],size_t begin, size_t end)
     delete[] d;
 }
 
-template<> void merge<char*>(char* arr[], size_t begin, size_t end)
+template<> void merge<char*>(char* arr[], size_t N)
 
 {
-    size_t i = begin, t = 0, mid = begin + (end - begin) / 2, j = mid + 1;
+    size_t begin = 0, end =N-1, i = begin, t = 0, mid = begin + (end - begin) / 2, j = mid + 1;
     char** d = new char*[end + 1];
 
     while (i <= mid && j <= end) {
@@ -86,14 +86,14 @@ template<> void merge<char*>(char* arr[], size_t begin, size_t end)
 }
 
 template<typename T>
-void msort(T* arr, size_t N, size_t left, size_t right)
+void msort(T* arr, size_t N)
 {
-    
-    if (left<right)
+    if (N>=2)
     {
-            msort(arr, N, left, left + (right - left) / 2);
-            msort(arr, N, left + (right - left) / 2 + 1, right);
-            merge(arr, left, right);
+        size_t size = N / 2;
+            msort(arr,size);
+            msort(arr+size,N-size);
+            merge(arr,N);
     }
 
 }
