@@ -16,7 +16,7 @@ int main()
       cin >> arr[i];
     }
 
-    merge_sort(arr, buff, 0, n);
+    msort(arr, buff, 0, n);
 
     for (int i = 0; i < n; i++)
     {

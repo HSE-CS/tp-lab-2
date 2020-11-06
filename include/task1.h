@@ -57,7 +57,7 @@ void merge(T *array, T *buffer, int left, int right, int middle)
 }
 
 template <typename T>
-void merge_sort(T *array, T *buffer, int left, int right)
+void msort(T *array, T *buffer, int left, int right)
 {
   if (right - left <= 1)
   {
