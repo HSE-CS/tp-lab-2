@@ -83,9 +83,6 @@ void msort(T *arr, int n)
     //   cout << right_arr[i] << " ";
     // cout << endl;
 
-
-  T *buffer = new int[n];
-
   msort(left_arr, left);
   msort(right_arr, right);
 
