@@ -10,8 +10,12 @@ unsigned int min(unsigned int a, unsigned int b) {
 	return b;
 }
 
+void copy(char*& _str1, char*& _str2) {
+	_str1 = _str2;
+}
+
 template<typename T>
-T* msort(T* arr, unsigned int n) {
+void msort(T* arr, unsigned int n) {
 
 	T* _res = new T[n];
 
@@ -50,20 +54,10 @@ T* msort(T* arr, unsigned int n) {
 			}
 		}
 	}
-	return arr;
 }
 
 template<>
-char** msort<char*>(char** arr, unsigned int n) {
-
-	//New copy array
-	char** point = new char* [n];
-	for (size_t i = 0; i < n; ++i) {
-		point[i] = new char[n];
-	}
-	for (size_t i = 0; i < n; ++i) {
-		strcpy(point[i], arr[i]);
-	}
+void msort<char*>(char** arr, unsigned int n) {
 
 	//Array for sort
 	char** _res = new char* [n];
@@ -82,36 +76,29 @@ char** msort<char*>(char** arr, unsigned int n) {
 			unsigned int left = j;
 			//Merge
 			while ((_iter1 + left < middle) && (_iter2 + middle < right)) {
-				if (strlen(point[left + _iter1]) < strlen(point[middle + _iter2])) {
-					strcpy(_res[_iter1 + _iter2], point[left + _iter1]);
+				if (strlen(arr[left + _iter1]) < strlen(arr[middle + _iter2])) {
+					copy(_res[_iter1 + _iter2], arr[left + _iter1]);
 					_iter1++;
 				}
 				else {
-					strcpy(_res[_iter1 + _iter2], point[middle + _iter2]);
+					copy(_res[_iter1 + _iter2], arr[middle + _iter2]);
 					_iter2++;
 				}
 			}
 
 			while (left + _iter1 < middle) {
-				strcpy(_res[_iter1 + _iter2], point[left + _iter1]);
+				copy(_res[_iter1 + _iter2], arr[left + _iter1]);
 				_iter1++;
 			}
 			while (middle + _iter2 < right) {
-				strcpy(_res[_iter1 + _iter2], point[middle + _iter2]);
+				copy(_res[_iter1 + _iter2], arr[middle + _iter2]);
 				_iter2++;
 			}
 
 			for (size_t w = 0; w < _iter1 + _iter2; ++w) {
-				strcpy(point[left + w], _res[w]);
+				copy(arr[left + w], _res[w]);
 			}
 		}
 	}
-	
-	for (size_t i = 0; i < n; ++i){
-		strcpy(arr[i], point[i]);
-	}
-
-	return arr;
-
 }
 
