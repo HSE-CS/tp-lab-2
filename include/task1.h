@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string.h>
 
@@ -13,55 +12,55 @@ template <> bool compare <char*> (char* a, char* b) {
 }
 
 
-template<typename T>
-void merge(T arr[],int begin,int end)
+template <typename T>
+void msort(T* arr, size_t N)
 {
-    size_t  i = begin, t = 0, mid = begin + (end - begin) / 2, j = mid + 1;
-        T* d= new T[end+1];
+	if (N > 1)
+	{
+		size_t center = N / 2;
 
-    while (i <= mid && j<= end) {
+		T* arr_1 = new T[center];
+		T* arr_2 = new T[N - center];
 
-        if (compare(arr[i],arr[j])) {
-            d[t] = arr[i]; 
-            i++;
-        }
-        else {
-            d[t] = arr[j]; 
-            j++;
-        }
-        t++;
-    }
+		for (int i = 0; i < center; i++)
+			arr_1[i] = arr[i];
+		for (size_t i = 0; i < N - center; i++)
+			arr_2[i] = arr[i + center];
 
-    while (i <= mid) {
-        d[t] = arr[i]; 
-        i++; 
-        t++;
+		msort(arr_1, center);
+		msort(arr_2, N - center);
 
-    }
+		int  k = 0, i = 0, j = 0;
 
-    while (j <= end) {
-        d[t] = arr[j]; 
-        j++;
-        t++;
-    }
+		while (i < center && j < N - center)
+		{
+			if (compare(arr_1[i], arr_2[j]))
+			{
+				arr[k] = arr_1[i];
+				i++;
+			}
+			else
+			{
+				arr[k] = arr_2[j];
+				j++;
+			}
+			k++;
 
-    for (i = 0; i < t; i++)
-        arr[begin + i] = d[i];
-    delete[] d;
+		}
+
+		while (i < center)
+		{
+			arr[k] = arr_1[i];
+			i++;
+			k++;
+		}
+		while (j < N - center)
+		{
+			arr[k] = arr_2[j];
+			j++;
+			k++;
+		}
+
+	}
 }
 
-
-template<typename T>
-void msort(T* arr, int N, int left, int right)
-{
-   
-    if (left < right)
-    {
-        msort(arr,N, left, left + (right - left) / 2);
-        msort(arr,N, left + (right - left) / 2 + 1, right);
-        merge(arr,left,right);
-    }
-
-    
-
-}
