@@ -15,7 +15,7 @@ template<> bool comp<char*>(char* a, char* b)
 }
 
 template<class T>
-void msort(T *arr, std::size_t size) {
+void msort(T *arr, size_t size) {
 	if (size > 1) {
 		size_t l_size = size / 2;
 		size_t r_size = size - l_size;
