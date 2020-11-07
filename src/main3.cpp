@@ -1,5 +1,6 @@
 #include <iostream>
 #include <time.h>
+#include <string.h>
 #include "task3.h"
 
 #define SIZE3 5
