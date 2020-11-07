@@ -3,6 +3,13 @@
 
 using namespace std;
 
+template<typename T>
+T gen()
+{
+	int t = rand();
+	return t;
+}
+
 int main() 
 {
 	const int n = 7;

@@ -2,13 +2,6 @@
 
 using namespace std;
 
-template<typename T>
-T gen()
-{
-	int t = rand();
-	return t;
-}
-
 template<typename T, int N>
 T* createArr(T(*gen)())
 {
