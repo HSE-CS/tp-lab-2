@@ -1,4 +1,4 @@
-#include "task2.hpp"
+#include "task2.h"
 
 int main(){
     const size_t N = 10;
