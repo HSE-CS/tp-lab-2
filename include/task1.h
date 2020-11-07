@@ -10,51 +10,49 @@
 #ifndef TASK1_TASK1_H
 #define TASK1_TASK1_H
 
-#include <vector>
-
-using namespace std;
+#include <cstring>
 
 template<typename T>
-void MergeSortWorker(vector<T> &a, vector<T> &x, int s, int e) {
-    if (e - s < 1) return;
-    int m = (s + e) / 2;
-    MergeSortWorker<T>(a, x, s, m);
-    MergeSortWorker<T>(a, x, m + 1, e);
-    int i = s, j = m + 1, k = 0;
-    while (i <= m && j <= e) {
-        if (a[i] < a[j]) {
-            x[k] = a[i];
-            i++;
+bool comp(T a, T b) { return a < b; }
+
+template<>
+bool comp<char *>(char *a, char *b) { return strlen(a) < strlen(b); }
+
+template<typename T>
+void merge(T *arr, int first, int last);
+
+template<typename T>
+void sort(T *arr, int first, int last);
+
+template<typename T>
+void msort(T *array, size_t size) {
+    sort(array, 0, size - 1);
+}
+
+template<typename T>
+void merge(T *arr, int first, int last) {
+    T *temp = new T[last + 1];
+    int m = (first + last) / 2, i = first, k = m + 1;
+    for (int j = first; j <= last; j++) {
+        if (!(i <= m) || !((k > last) || (comp(arr[i], arr[k])))) {
+            temp[j] = arr[k];
             k++;
         } else {
-            x[k] = a[j];
-            j++;
-            k++;
+            temp[j] = arr[i];
+            i++;
         }
     }
-    while (i <= m) {
-        x[k] = a[i];
-        i++;
-        k++;
-    }
-    while (j <= e) {
-        x[k] = a[j];
-        j++;
-        k++;
-    }
-    for (i = s; i <= e; i++) a[i] = x[i - s];
+    for (int j = first; j <= last; j++) arr[j] = temp[j];
+    delete[] temp;
 }
 
 template<typename T>
-void msort(vector<T> &v) {
-    vector<T> x(v.size());
-    MergeSortWorker<T>(v, x, 0, v.size() - 1);
-}
-
-template<typename T>
-bool Sorting(vector<T> &a) {
-    for (int i = 0; i < a.size() - 1; ++i) if (a[i] > a[i + 1]) return false;
-    return true;
+void sort(T *arr, int first, int last) {
+    if (first < last) {
+        sort(arr, first, (first + last) / 2);
+        sort(arr, (first + last) / 2 + 1, last);
+        merge(arr, first, last);
+    }
 }
 
 #endif

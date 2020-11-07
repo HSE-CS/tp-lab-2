@@ -6,25 +6,16 @@
 #include "../include/task1.h"
 
 int main() {
-    vector<int> a;
-    a.reserve(1000);
-    for (int i = 0; i < 1000; ++i) a.push_back(-50 + rand() % 100);
-    msort(a);
-    printf("\n%d", Sorting(a));
+    double arrayDouble[6]{4.0, 3.0, 2.4, 2.5, 2.1, -1};
+    msort(arrayDouble, 6);
+    for (double i : arrayDouble) std::cout << i << ' ';
 
-    vector<int> b;
-    b.reserve(1001);
-    for (int i = 0; i < 1001; ++i) b.push_back(-50 + rand() % 100);
-    msort(b);
-    printf("\n%d", Sorting(b));
+    std::cout << std::endl;
 
-    vector<int> c;
-    c.push_back(2);
-    msort(c);
-    printf("\n%d", Sorting(c));
+    char *arrayString[6]{(char *) "ffff", (char *) "fff2", (char *) "f", (char *) "ff", (char *) "vvv",
+                         (char *) "fffrr"};
+    msort(arrayString, 6);
+    for (auto &i : arrayString) std::cout << i << ' ';
 
-    vector<int> d;
-    for (int i = 1; i < 6; i++) d.push_back(i);
-    msort(d);
-    printf("\n%d", Sorting(d));
+    return 0;
 }
