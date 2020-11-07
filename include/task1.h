@@ -4,6 +4,7 @@
 #include<climits>
 #include<string.h>
 #include <iostream>
+#include <typeinfo>
 
 template<class T> bool comparator(T a, T b) {
 	return (a < b);

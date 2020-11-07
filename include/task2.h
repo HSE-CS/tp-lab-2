@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <typeinfo>
 
 template <typename T, size_t N> T* createArr(T (*gen)()){
     T* array = new T[N];
