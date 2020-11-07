@@ -18,9 +18,9 @@ include_directories(${COMMON_INCLUDES})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
-set(SRC_FILES1 ${PROJECT_SOURCE_DIR}/src/main1.cpp)
-set(SRC_FILES2 ${PROJECT_SOURCE_DIR}/src/main2.cpp)
-set(SRC_FILES3 ${PROJECT_SOURCE_DIR}/src/main3.cpp)
+set(SRC_FILES1 include/task1.h src/main1.cpp)
+set(SRC_FILES2 include/task2.h src/main2.cpp)
+set(SRC_FILES3 include/task3.h src/main3.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
