@@ -104,7 +104,7 @@ void msort <char*>(char** array, const int num_el)
             
         } while (left < num_el);
         for (int i = 0; i < num_el; i++)
-            std::swap<char*>(array[i], temp[i]);
+            swap<char*>(array[i], temp[i]);
         for (size_t i = 0; i < num_el; i++)
             delete[] temp[i];
         step *= 2;
