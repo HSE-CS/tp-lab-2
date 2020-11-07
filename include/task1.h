@@ -12,7 +12,7 @@ bool comparasion(T a, T b)
   return (a < b);
 }
 
-template <> bool comparasion <const char*> (const char* a, const char* b)
+template <> bool comparasion <char*> (char* a, char* b)
 {
     return (strlen(a) < strlen(b));
 }
