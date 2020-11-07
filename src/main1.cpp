@@ -3,11 +3,7 @@
  */
 
 #include <iostream>
-#include <vector>
-#include <cstdlib>
 #include "../include/task1.h"
-
-using namespace std;
 
 int main() {
     vector<int> a;

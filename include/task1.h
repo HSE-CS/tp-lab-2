@@ -10,14 +10,11 @@
 #ifndef TASK1_TASK1_H
 #define TASK1_TASK1_H
 
-#include <iostream>
-#include <cassert>
 #include <vector>
-#include <cstdlib>
 
 using namespace std;
 
-template<class T>
+template<typename T>
 void MergeSortWorker(vector<T> &a, vector<T> &x, int s, int e) {
     if (e - s < 1) return;
     int m = (s + e) / 2;
@@ -48,13 +45,13 @@ void MergeSortWorker(vector<T> &a, vector<T> &x, int s, int e) {
     for (i = s; i <= e; i++) a[i] = x[i - s];
 }
 
-template<class T>
+template<typename T>
 void msort(vector<T> &v) {
     vector<T> x(v.size());
     MergeSortWorker<T>(v, x, 0, v.size() - 1);
 }
 
-template<class T>
+template<typename T>
 bool Sorting(vector<T> &a) {
     for (int i = 0; i < a.size() - 1; ++i) if (a[i] > a[i + 1]) return false;
     return true;

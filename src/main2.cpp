@@ -3,7 +3,6 @@
  */
 
 #include <iostream>
-#include <cstring>
 #include "../include/task2.h"
 
 template<typename T>

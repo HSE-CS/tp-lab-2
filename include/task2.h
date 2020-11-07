@@ -10,8 +10,6 @@
 #ifndef TASK1_TASK2_H
 #define TASK1_TASK2_H
 
-#include <cstdlib>
-
 template<typename T, const size_t N>
 T *createArr(T(*gen)()) {
     T *arr = new T[N];
