@@ -15,7 +15,7 @@ int main()
 	//int* expected = new int[n] {48, 49, 50, 51, 52};
 
 	for (size_t i = 0; i < n; i++)
-		cout << arr[i];
+		//cout << arr[i];
 		//EXPECT_EQ(expected[i], arr[i]);
 	delete[] arr;
 	//delete[] expected;

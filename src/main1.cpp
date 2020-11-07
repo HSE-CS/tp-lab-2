@@ -1,10 +1,14 @@
 #include "task1.h"
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <utility>
 #include <iostream>
 #include <cmath>
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
-using namespace std;
+//using namespace std;
 
 int main()
 {

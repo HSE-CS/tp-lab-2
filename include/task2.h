@@ -1,12 +1,15 @@
 #ifndef TASK2_H
 #define TASK2_H
-
-#include <stdio.h>
+#include <stddef.h>
 #include <stdlib.h>
-#include <cstdlib>
+#include <string.h>
+#include <utility>
 #include <iostream>
-#include <cstring>
-using namespace std;
+#include <cmath>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+//using namespace std;
 template<class T, size_t N>
 T* createArr(T(*f)())
 {

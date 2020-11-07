@@ -1,12 +1,15 @@
 #ifndef TASK3_H
 #define TASK3_H
-
-#include <stdio.h>
+#include <stddef.h>
 #include <stdlib.h>
-#include <cstdlib>
+#include <string.h>
+#include <utility>
 #include <iostream>
-#include <cstring>
-using namespace std;
+#include <cmath>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+//using namespace std;
 template <typename T>
 void map(T* a, int n)
 {
