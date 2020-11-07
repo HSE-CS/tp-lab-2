@@ -5,7 +5,6 @@
 #ifndef LAB_2_TASK1_H
 #define LAB_2_TASK1_H
 
-#include <vector>
 #include <cstring>
 #include <iostream>
 
@@ -20,25 +19,25 @@ unsigned int range(char *str) {
 
 template<class T>
 void merge(T *arr, unsigned int start, unsigned int mid, unsigned int end) {
-    std::vector<T> merged;
+    T* merged = new T[end - start + 1];
 
-    unsigned int i, j;
-    for (i = start, j = mid + 1; i <= mid && j <= end;) {
+    unsigned int i, j, k;
+    for (i = start, j = mid + 1, k = 0; i <= mid && j <= end; k++) {
         if (range(arr[i]) < range(arr[j])) {
-            merged.push_back(arr[i]);
+            merged[k] = arr[i];
             i++;
         } else {
-            merged.push_back(arr[j]);
+            merged[k] = arr[j];
             j++;
         }
     }
 
-    for (; i <= mid; i++)
-        merged.push_back(arr[i]);
-    for (; j <= end; j++)
-        merged.push_back(arr[j]);
+    for (; i <= mid; i++, k++)
+        merged[k] = arr[i];
+    for (; j <= end; j++, k++)
+        merged[k] = arr[j];
 
-    for (i = 0; i < merged.size(); i++)
+    for (i = 0; i < k; i++)
         arr[i + start] = merged[i];
 }
 
