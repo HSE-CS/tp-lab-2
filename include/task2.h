@@ -1,7 +1,7 @@
 
 template <typename T>
 T gen() {
-    return rand() % 10;
+    return 7;
 }
 
 template<typename T, size_t size>
