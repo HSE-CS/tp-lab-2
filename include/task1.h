@@ -77,21 +77,21 @@ void msort <char*>(char** array, const int num_el)
             {
                 if (strlen(array[i1]) < strlen(array[i2]))
                 {
-                    temp[index] = array[i1++]);
+                    temp[index] = array[i1++];
                 }
                 else
                 {
-                    temp[index] = array[i2++]);
+                    temp[index] = array[i2++];
                 }
             }
 
             while (i1 < mid)
             {
-                temp[index] = array[i1++]);
+                temp[index] = array[i1++];
             }
             while (i2 < right)
             {
-                temp[index] = array[i2++]);
+                temp[index] = array[i2++];
             }
             left += step * 2;
             mid += step * 2;
