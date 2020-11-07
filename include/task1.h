@@ -55,57 +55,52 @@ template <typename T> void msort(T* array, const int num_el)
 template<>
 void msort <char*>(char** array, const int num_el)
 {
-    int step = 1;
-    char** temp = new char* [num_el];
-    while (step < num_el)
+    int mid = (num_el + num_el % 4) / 2;
+    if (num_el % 2 == 1)
+        mid++;
+
+    int cur_step = 1;
+    char** temp = new char*[num_el];
+    int step;
+    while (cur_step < num_el)
     {
-        int index = 0;
-        int left = 0;
-        int mid = left + step;
-        int right = left + step * 2;
-        do
+        step = cur_step;
+        int i = 0;
+        int j = mid;
+        int k = 0;
+        while (step <= mid)
         {
-            if (mid < num_el)
-                mid = mid;
-            else mid = num_el;
-            if (right < num_el)
-                right = right;
-            else right = num_el;
-            int i1 = left;
-            int i2 = mid;
-            for (; i1 < mid && i2 < right; )
+            while ((i < step) && (j < num_el) && (j < (mid + step)))
             {
-                if (strlen(array[i1]) < strlen(array[i2]))
+                if (strlen(array[i]) < strlen(array[j]))
                 {
-                    temp[index] = array[i1++];
+                    temp[k] = array[i];
+                    i++; k++;
                 }
-                else
+                else 
                 {
-                    temp[index] = array[i2++];
+                    temp[k] = array[j];
+                    j++; 
+                    k++;
                 }
             }
-
-            while (i1 < mid)
+            while (i < step)
             {
-                temp[index] = array[i1++];
+                temp[k] = array[i];
+                i++;
+                k++;
             }
-            while (i2 < right)
+            while ((j < (mid + step)) && (j < num_el))
             {
-                temp[index] = array[i2++];
+                temp[k] = array[j];
+                j++; 
+                k++;
             }
-            left += step * 2;
-            mid += step * 2;
-            right += step * 2;
-
-            
-        } while (left < num_el);
-        for (int i = 0; i < num_el; i++)
-        {
-            array[i] = temp[i];
+            step = step + cur_step;
         }
-        /*for (size_t i = 0; i < num_el; i++)
-            delete[] temp[i];*/
-        step *= 2;
+        cur_step *= 2;
+        for (i = 0; i < num_el; i++)
+            array[i] = temp[i];
     }
 }
 
