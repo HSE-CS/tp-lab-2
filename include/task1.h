@@ -1,7 +1,5 @@
-#include <algorithm>
-#include <cstddef>
-#include <iterator>
-#include <memory>
+#include <iostream>
+#include <string.h>
 
 template<typename T>
 void msort(T arr[], size_t size) {
