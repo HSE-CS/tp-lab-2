@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cstring>
 using namespace std;
 
 template<typename T> 
