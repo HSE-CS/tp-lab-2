@@ -1,8 +1,4 @@
-#include <algorithm>
-#include <cstddef>
-#include <iterator>
-#include <memory>
-
+#include <iostream>
 
 template< typename T, size_t size>
 T* createArr(T(*gen)()) {

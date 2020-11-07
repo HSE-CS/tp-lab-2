@@ -1,7 +1,4 @@
-#include <algorithm>
-#include <cstddef>
-#include <iterator>
-#include <memory>
+#include <iostream>
 
 template <typename T, size_t size>
 void map(T* arr, T(*change)(T val)) {
