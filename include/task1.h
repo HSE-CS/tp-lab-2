@@ -8,12 +8,12 @@
 
 template<typename T> bool comp(T a, T b)
 {
-    return a > b;
+    return a < b;
 }
 
 template<>bool comp<char *>(char *a, char *b)
 {
-    return strlen(a) > strlen(b);
+    return strlen(a) < strlen(b);
 }
 
 template <class T> void msort(T (*arr), const size_t SIZE)

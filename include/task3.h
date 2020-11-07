@@ -12,9 +12,9 @@ template<class T, size_t SIZE> void map(T arr[], T (*f_change)(T))
 		arr[i] = f_change(arr[i]);
 }
 
-int change_mod_2020 (int a)
+int change_mod_1000 (int a)
 {
-    return a%2020;
+    return a%1000;
 }
 
 #endif

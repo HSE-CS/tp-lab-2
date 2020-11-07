@@ -15,9 +15,9 @@ template<class T, size_t SIZE> T * createArr(T (*f_gen)())
 	}
 	return arr;
 }
-int rand_int_mod_2020 ()
+int rand_int_mod_1000 ()
 {
-    return rand()%2020;
+    return rand()%1000;
 }
 
 

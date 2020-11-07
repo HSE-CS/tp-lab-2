@@ -3,7 +3,7 @@
 int main()
 {
     const size_t n = 4;
-	int *val = new int[n]{5, 3, 1, 4};
+	int *val = new int[n]{7, 5, 3, 8};
 	msort(val, n);
 	for (size_t i = 0; i < n ; i++)
 	    std::cout << val[i] << " ";
