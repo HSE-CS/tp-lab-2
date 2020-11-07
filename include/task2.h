@@ -1,11 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/*
 template<typename T>
 T gen() {
 	return rand();
 }
-
+*/
 
 template<typename T, size_t n>
 T* createArr(T (*fun) ()) {
