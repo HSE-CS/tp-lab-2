@@ -107,7 +107,6 @@ void msort <char*>(char** array, const int num_el)
             delete[] temp[i];*/
         step *= 2;
     }
-    delete[] temp;
 }
 
 #endif
