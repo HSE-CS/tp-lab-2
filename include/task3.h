@@ -10,9 +10,11 @@
 #include <cstdlib>
 #include <ctime>
 //using namespace std;
-template <typename T>
-void map(T* a, int n)
+template<typename T, size_t N>
+void map(T*arr, T(*change)(T val)) 
 {
-
+    for (size_t i = 0; i < N; ++i) {
+        arr[i] = change(arr[i]);
+    }
 }
 #endif
