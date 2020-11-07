@@ -15,7 +15,7 @@ template <typename T, size_t size> T* createArr(T(*gen)()) {
 	return array;
 }
 
-template<class T> T gen() {
+template<class T> T gen1() {
 	return rand()%51;
 }
 #endif 
