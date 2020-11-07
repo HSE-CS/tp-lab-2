@@ -6,7 +6,7 @@ int main()
 	 int* arr = createArr<int, N>(gen);
 	 for (int i = 0; i < N; i++) 
 	 {
-		 cout << arr[i] << "  ";
+		 cout << arr[i] << "\t";
 	 };
 	 cout << endl;
 	 delete[] arr;

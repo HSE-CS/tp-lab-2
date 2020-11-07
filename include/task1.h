@@ -2,44 +2,96 @@
 #define TASK1_H
 
 #include <iostream>
-#include <string>
+#include <cstring>
 using namespace std;
 
 template <typename T>
-void merge(T* arr, int left, int middle, int right) 
+void mergesort(T* arr, int left, int middle, int right) 
 {
-	int ,sizeleft = middle - left + 1, sizeright = right - middle;
-	T leftarr[sizeleft], rightarr[sizeright];
+	int sizeleft = middle - left + 1, sizeright = right - middle;
+	T* leftarr = new T[sizeleft];
 	for (int i = 0; i < sizeleft; i++)
 		leftarr[i] = arr[left + i];
+	T* rightarr= new T[sizeright];
 	for (int i = 0; i < sizeright; i++)
 		rightarr[i] = arr[middle + 1 + i];
 	int fromleft = 0, fromright = 0, newid = left;
-	while ((fromleft < sizeleft) && (fromright < sizeright))
+	start:
+	if ((fromleft < sizeleft) && (fromright < sizeright))
 	{
 		if (leftarr[fromleft] <= rightarr[fromright]) 
 		{
 			arr[newid] = leftarr[fromleft];
 			fromleft++;
+			newid++;
+			goto start;
 		}
 		else 
 		{
 			arr[newid] = rightarr[fromright];
 			fromright++;
+			newid++;
+			goto start;
 		}
-		newid++;
 	}
-	while (fromleft < sizeleft) 
+	else if (fromleft < sizeleft) 
 	{
 		arr[newid] = leftarr[fromleft];
 		fromleft++;
 		newid++;
+		goto start;
 	}
-	while (fromright < sizeright) 
+	else if (fromright < sizeright) 
 	{
 		arr[newid] = rightarr[fromright];
 		fromright++;
 		newid++;
+		goto start;
+	}
+}
+
+template <>
+void mergesort(char** arr, int left, int middle, int right) 
+{
+	int sizeleft = middle - left + 1, sizeright = right - middle;
+	char** lefrarr = new char* [sizeleft];
+	for (int i = 0; i < sizeleft; i++)
+		lefrarr[i] = arr[left + i];
+	char** rightarr = new char* [sizeright];
+	for (int i = 0; i < sizeright; i++)
+		rightarr[i] = arr[middle + 1 + i];
+	int fromleft = 0, fromright = 0, newid = left;
+	start2:
+	if ((fromleft < sizeleft) && (fromright < sizeright))
+	{
+		if (strlen(lefrarr[fromleft]) < strlen(rightarr[fromright]))
+		{
+			arr[newid] = lefrarr[fromleft];
+			fromleft++;
+			newid++;
+			goto start2;
+		}
+		else 
+		{
+			arr[newid] = rightarr[fromright];
+			fromright++;
+			newid++;
+			goto start2;
+		}
+	}
+	else if (fromleft < sizeleft) 
+	{
+		arr[newid] = lefrarr[fromleft];
+		fromleft++;
+		newid++;
+		goto start2;
+	}
+	else if (fromright < sizeright) 
+	{
+		arr[newid] = rightarr[fromright];
+		fromright++;
+		newid++;
+		goto start2;
 	}
 }
 
@@ -51,47 +103,7 @@ void descent(T arr, int left, int right)
 		int middle = left + (right - left) / 2;
 		descent(arr, left, middle);
 		descent(arr, middle + 1, right);
-		merge(arr, left, middle, right);
-	}
-}
-
-
-template <>
-void merge(char** arr, int left, int middle, int right) 
-{
-	int sizeleft = middle - left + 1, sizeright = right - middle;
-	char** lefrarr = new char* [sizeleft];
-	char** rightarr = new char* [sizeright];
-	for (int i = 0; i < sizeleft; i++)
-		lefrarr[i] = arr[left + i];
-	for (int i = 0; i < sizeright; i++)
-		rightarr[i] = arr[middle + 1 + i];
-	int fromleft = 0, fromright = 0, newid = left;
-	while ((fromleft < sizeleft) && (fromright < sizeright))
-	{
-		if (strlen(lefrarr[fromleft]) < strlen(rightarr[fromright]))
-		{
-			arr[newid] = lefrarr[fromleft];
-			fromleft++;
-		}
-		else 
-		{
-			arr[newid] = rightarr[fromright];
-			fromright++;
-		}
-		newid++;
-	}
-	while (fromleft < sizeleft) 
-	{
-		arr[newid] = lefrarr[fromleft];
-		fromleft++;
-		newid++;
-	}
-	while (fromright < sizeright) 
-	{
-		arr[newid] = rightarr[fromright];
-		fromright++;
-		newid++;
+		mergesort(arr, left, middle, right);
 	}
 }
 
@@ -103,14 +115,14 @@ void descent(char** arr, int left, int right)
 		int middle = left + (right - left) / 2;
 		descent(arr, left, middle);
 		descent(arr, middle + 1, right);
-		merge(arr, left, middle, right);
+		mergesort(arr, left, middle, right);
 	}
 }
 
 template <typename T>
-void msort(T* arr, int size)
+void msort(T* arr, int N)
 {
-	descent(arr, 0, size-1);
+	descent(arr, 0, N-1);
 }
 
 #endif
