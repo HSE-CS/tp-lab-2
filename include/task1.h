@@ -98,27 +98,32 @@ void merge(char** arr, int l, int m, int r)
 }
 
 template<typename T>
-void msort(T* arr, int l, int r)
+void mergesort(T* arr, int l, int r)
 {
 	if (l < r)
 	{
 		int m = l + (r - l) / 2;
-		msort(arr, l, m);
-		msort(arr, m + 1, r);
+		mergesort(arr, l, m);
+		mergesort(arr, m + 1, r);
 		merge(arr, l, m, r);
 	}
 }
 
 template<>
-void msort(char** arr, int l, int r)
+void mergesort(char** arr, int l, int r)
 {
 	if (l < r)
 	{
 		int m = l + (r - l) / 2;
-		msort(arr, l, m);
-		msort(arr, m + 1, r);
+		mergesort(arr, l, m);
+		mergesort(arr, m + 1, r);
 		merge(arr, l, m, r);
 	}
+}
+
+template <typename T> void msort(T* arr, int n)
+{
+	mergesort(arr, 0, n - 1);
 }
 
 
