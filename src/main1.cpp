@@ -16,9 +16,9 @@ int main() {
 	}
 	cout << endl;
 
-	const char* C[] = { "ba", "bdc", "ddddc", "edev", "d" };
-	msort(C, 5);
-	for (size_t i = 0; i < 5; i++) {
+	char* C[6]{ (char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr" };
+	msort(C, 6);
+	for (size_t i = 0; i < 6; i++) {
 		cout << C[i] << ' ';
 	}
 	cout << endl;

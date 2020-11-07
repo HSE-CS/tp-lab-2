@@ -11,7 +11,7 @@ bool comp(T a, T b) {
 }
 
 template<>
-bool comp<const char*>(const char* a, const char* b) {
+bool comp<char*>(char* a, char* b) {
 	return strlen(a) < strlen(b);
 	//return strcmp(a, b) < 0;
 }
