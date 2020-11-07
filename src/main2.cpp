@@ -1,5 +1,11 @@
 #include "task2.h"
 
+template<typename T>
+T gen()
+{
+	return 1;
+}
+
 int main() 
 {
 	 const int N = 8;

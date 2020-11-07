@@ -13,6 +13,6 @@ T* createArr(T(*gen)())
 	{
 		arr[i] = gen();
 	}
-	return 1;
+	return arr;
 }
 #endif
