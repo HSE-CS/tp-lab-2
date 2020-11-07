@@ -25,12 +25,12 @@ void msort(T arr[], size_t size) {
 			}
 			if (l_idx == left) {
 				for (size_t i = left; i < right; i++) {
-					tmp_arr[idx + i] = arr[left + i];
+					tmp_arr[idx + i - left] = arr[i];
 				}
 			}
 			if (r_idx == size) {
 				for (size_t i = right; i < size; i++) {
-					tmp_arr[idx + i] = arr[right + i];
+					tmp_arr[idx + i - right] = arr[i];
 				}
 			}
 		}
@@ -64,12 +64,12 @@ void msort(char** arr, size_t size) {
 			}
 			if (l_idx == left) {
 				for (size_t i = left; i < right; i++) {
-					tmp_arr[idx + i] = arr[left + i];
+					tmp_arr[idx + i - left] = arr[left + i];
 				}
 			}
 			if (r_idx == size) {
 				for (size_t i = right; i < size; i++) {
-					tmp_arr[idx + i] = arr[right + i];
+					tmp_arr[idx + i - right] = arr[right + i];
 				}
 			}
 		}

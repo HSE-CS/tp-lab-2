@@ -1,11 +1,12 @@
-#include <iostream>
 #include "task1.h"
 
 int main() {
-	int a[6] = { 1,3,5,2,4,6 };
-	msort(a, 6);
-	for (int i = 0; i < 6; i++) {
-		std::cout << a[i] << "\n";
+	const size_t n = 6;
+	int* val = new int[n] {5, 3, 2, 4, 1, 6};
+	msort(val, n);
+	for (size_t i = 0; i < n; ++i) {
+		std::cout << val[i];
 	}
+	std::cout << std::endl;
 	return 0;
 }
