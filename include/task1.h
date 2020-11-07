@@ -36,23 +36,17 @@ void charmsort(char** arr, size_t n) {
 
             if (lidx == left_border)
             {
-                std::copy(std::make_move_iterator(&arr[ridx]),
-                    std::make_move_iterator(&arr[n]),
-                    &tmp_arr[idx]);
+                copy(arr, &tmp_arr[idx], ridx, n);
                 break;
             }
             if (ridx == n)
             {
-                std::copy(std::make_move_iterator(&arr[lidx]),
-                    std::make_move_iterator(&arr[left_border]),
-                    &tmp_arr[idx]);
+                copy(arr, &tmp_arr[idx], lidx, left_border);
                 break;
             }
         }
 
-        std::copy(std::make_move_iterator(tmp_arr),
-            std::make_move_iterator(&tmp_arr[n]),
-            arr);
+        copy(tmp_arr, arr, 0, n);
     }
 }
 
