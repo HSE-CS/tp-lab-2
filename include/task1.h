@@ -69,7 +69,7 @@ void merge(char** arr, int l, int m, int r)
 
 	while (i < n1 && j < n2)
 	{
-		if (strlen(L[i]) <= strlen(R[j]))
+		if (strlen(L[i]) < strlen(R[j]))
 		{
 			arr[k] = L[i];
 			i++;
