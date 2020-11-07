@@ -1,9 +1,4 @@
 
-template <typename T>
-T gen() {
-    return 7;
-}
-
 template<typename T, size_t size>
 T* createArr(T(*gen)()) {
     T* arr = new T[size];
