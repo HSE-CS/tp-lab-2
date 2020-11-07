@@ -2,14 +2,14 @@
 
 int main() {
 	char* A;
-	A = createArr<char, 5>(gen);
+	A = createArr<char, 5>(gender);
 	for (size_t i = 0; i < 5; i++) {
 		cout << A[i] << ' ';
 	}
 	cout << endl;
 
 	int* I;
-	I = createArr<int, 5>(gen);
+	I = createArr<int, 5>(gender);
 	for (size_t i = 0; i < 5; i++) {
 		cout << I[i] << ' ';
 	}
