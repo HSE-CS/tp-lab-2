@@ -1,6 +1,7 @@
 #ifndef TASK1_H
 #define TASK1_H
 #include <iostream>
+#include <cstring>
 
 template < typename T >
 
