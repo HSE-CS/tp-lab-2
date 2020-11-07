@@ -6,7 +6,7 @@
 #include <ctime>
 using namespace std;
 
-/*int main()
+int main()
 {
     const size_t n = 6;
     char* val[n]{ (char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr" };
@@ -19,4 +19,4 @@ using namespace std;
         printf("%s ", val[i]);
     printf("\n");
     return 0;
-}*/
+}
