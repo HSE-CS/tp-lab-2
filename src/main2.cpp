@@ -6,8 +6,8 @@ using namespace std;
 template<class T>
 T gen()
 {
-    static int t = 48;
-    return t++;
+	static int t = 48;
+	return t++;
 }
 
 int main() {
@@ -19,5 +19,5 @@ int main() {
         cout << array[i] << endl;
     }
 
-    return 0;
-}
+	return 0;
+} 
