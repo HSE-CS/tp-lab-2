@@ -4,8 +4,8 @@
 #include <memory>
 
 template<typename T>
-void msort(T arr[], unsigned int size) {
-	unsigned int left = 0, right = 0;
+void msort(T arr[], size_t size) {
+	size_t left = 0, right = 0;
 	if (size > 1) {
 		left = size / 2;
 		right = size - left;
@@ -14,7 +14,7 @@ void msort(T arr[], unsigned int size) {
 
 		T* tmp_arr = { 0 };
 		tmp_arr = new T[size];
-		unsigned int l_idx = 0, r_idx = 0, idx = 0;
+		size_t l_idx = 0, r_idx = 0, idx = 0;
 
 		while ((l_idx<left) || (r_idx <size)) {
 			if (arr[l_idx] < arr[r_idx]) {
@@ -43,8 +43,8 @@ void msort(T arr[], unsigned int size) {
 }
 
 
-void msort(char** arr, unsigned int size) {
-	unsigned int left = 0, right = 0;
+void msort(char** arr, size_t size) {
+	size_t left = 0, right = 0;
 	if (size > 1) {
 		left = size / 2;
 		right = size - left;
@@ -53,7 +53,7 @@ void msort(char** arr, unsigned int size) {
 
 		char** tmp_arr = { NULL };
 		tmp_arr = new char*[size];
-		unsigned int l_idx = 0, r_idx = 0, idx = 0;
+		size_t l_idx = 0, r_idx = 0, idx = 0;
 
 		while ((l_idx < left) || (r_idx < size)) {
 			if (strlen(arr[l_idx]) < strlen(arr[r_idx])) {
