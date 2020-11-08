@@ -3,6 +3,11 @@
 
 using namespace std;
 
+template <typename T> T change(T el)
+{
+	return el + 1;
+}
+
 int main()
 {
 	const size_t n = 5;

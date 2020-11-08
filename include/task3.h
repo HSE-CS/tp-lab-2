@@ -8,7 +8,4 @@ template <typename T, size_t n> void map(T arr[], T(*change)(T))
 		arr[i] = change(arr[i]);
 }
 
-template <typename T> T change(T el)
-{
-	return el + 1;
-}
+
