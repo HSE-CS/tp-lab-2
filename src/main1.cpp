@@ -1,24 +1,25 @@
-#include<iostream>
 #include "task1.h"
+#include <iostream>
 
-int main() {
+int main()
+{
+	const size_t n = 4;
+	int* arr1 = new int[n] {4, 3, 1, 2};
+	msort(arr1, n);
+	for (size_t i = 0; i < n; i++)
+		cout << arr1[i] << ' ';
+	cout << endl;
+	delete[] arr1;
 
-    int a[]{ 5, 3, 1, 10, 6, 4, 70, 80 };
-    msort(a, 8);
-    for (auto i : a)
-        std::cout << i << " ";
-    std::cout << "\n";
+	double arr2[n]{ 4.0, 3.0, 2, 1 };
+	msort(arr2, n);
+	for (size_t i = 0; i < n; i++)
+		cout << arr2[i] << " ";
+	cout << endl;
 
-    double b[]{ 3.1, 1.9, 5., 13., 4., 1.2 };
-    msort(b, 6);
-    for (auto i : b)
-        std::cout << i << " ";
-    std::cout << "\n";
-
-    char* c[6]{ (char*)"kehjvbk", (char*)"kagkjvjk", (char*)"kyfy", (char*)"ee", (char*)"kkyfukvcrsk", (char*)"au;oioiy6r" };
-    msort(c, 6);
-    for (auto i : c)
-        std::cout << i << " ";
-
-    return 0;
+	char* arr3[n]{ (char*)"aaaa", (char*)"aaa", (char*)"a", (char*)"aa" };
+	msort(arr3, n);
+	for (size_t i = 0; i < n; i++)
+		cout << arr3[i] << "\n";
+	cout << endl;
 }

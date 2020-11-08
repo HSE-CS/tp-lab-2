@@ -1,10 +1,19 @@
-#include<iostream>
 #include "task2.h"
+#include <iostream>
 
-int main() {
-    const size_t n = { 5 };
-    int* arr = createArr<int, n>(gen);
-    for (int i = { 0 }; i < n; ++i)
-        std::cout << arr[i] << " ";
-    return 0;
+template<class T>
+T gen() {
+	static int t = 48;
+	return t++;
+}
+
+int main()
+{
+	const size_t n = 4;
+	int* arr;
+	arr = createArr<int, n>(gen);
+	for (size_t i = 0; i < n; i++) {
+		cout << arr[i] << endl;
+	}
+	return 0;
 }
