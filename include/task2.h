@@ -9,12 +9,12 @@
 
 using namespace std;
 
-template<class T, size_t N> T* createArr(T(*f)())
+template<class T, size_t N> T* createArr(T(*gen)())
 {
 
     T* arr = new T[N];
     for (size_t i = 0; i < N; ++i)
-		arr[i] = f();
+		arr[i] = gen();
     return arr;
 }
 #endif  
