@@ -14,6 +14,7 @@ int compare(T first, T second) {
 }
 
 
+template<>
 int compare(const char *first, const char *second) {
     return (int) (strlen(first) <= strlen(second));
 }
