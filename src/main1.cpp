@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <cstdlib>
 #include <cstring>
@@ -10,7 +10,7 @@ int main()
 {
 	vector <double> arr{ 1.2,5.5,8.6,9.,2.9 };
 	for (size_t i = 0; i < arr.size(); ++i)
-		cout << arr[i] <<' ';
+		cout << arr[i] << ' ';
 	cout << endl;
 	msort(arr, 0, arr.size());
 	for (auto i : arr)

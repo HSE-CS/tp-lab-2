@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 
-//using namespace std;
+using namespace std;
 
 template <typename T> bool comp(T a, T b)
 {
@@ -15,7 +15,7 @@ template <> bool comp<char *>(char * a, char * b)
 }
 
 
-template <typename T> void msort(std::vector <T> &a, size_t start, size_t end)
+template <typename T> void msort(vector <T> &a, size_t start, size_t end)
 {
 	if (end - start < 2)
 		return;
@@ -27,7 +27,7 @@ template <typename T> void msort(std::vector <T> &a, size_t start, size_t end)
 	}
 	msort(a, start, start + (end - start) / 2);
 	msort(a, start + (end - start) / 2, end);
-	std::vector <T> b;
+	vector <T> b;
 	size_t b1 = start;
 	size_t e1 = start + (end - start) / 2;
 	size_t b2 = e1;
@@ -49,3 +49,4 @@ template <typename T> void msort(std::vector <T> &a, size_t start, size_t end)
 	for (size_t i = start; i < end; ++i)
 		a[i] = b[i - start];
 }
+
