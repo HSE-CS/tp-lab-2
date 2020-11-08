@@ -2,6 +2,12 @@
 
 using namespace std;
 
+template<class T>
+T change(T val)
+{
+	return val + 2;
+}
+
 int main()
 {
 	const size_t n = 5;
