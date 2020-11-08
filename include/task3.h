@@ -1,4 +1,5 @@
 #define task3_h
+#include<string.h>
 #include <iostream>
 
 

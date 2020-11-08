@@ -13,7 +13,7 @@ template<> char* change(char* val) {
 	return val;
 }
 
-int main() {
+int main3() {
 
 	/*const size_t n = 5;
 	int arr[n]{ 1, 2, 3, 4, 5 };
