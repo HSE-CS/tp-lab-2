@@ -1,5 +1,5 @@
 #include "task2.h"
-
+#include <cstddef>
 #include <iostream>
 
 size_t fibonacci_generator()
