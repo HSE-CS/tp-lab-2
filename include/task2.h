@@ -4,10 +4,9 @@
 template<class T, unsigned int N>
 
 T* createArr(T (*generator)()) {
-    T* initial = new T[N];
+    T* arr = new T[N];
     for (unsigned int i = 0; i < N; i++)
-        initial[i] = generator();
-        
+        arr[i] = generator();
     return arr;
 }
 #endif

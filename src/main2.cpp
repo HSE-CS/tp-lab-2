@@ -2,7 +2,6 @@
 #include "task2.h"
 
 template<class T>
-
 T gen()
 {
     static int t = 48;
@@ -10,7 +9,6 @@ T gen()
 }
 
 template<>
-
 char* gen()
 {
     static unsigned t = 0;
@@ -27,9 +25,9 @@ char* gen()
 int main() {
     const size_t n = 5;
  
-    int *initial = createArr<int, n>(gen);
+    int *arr = createArr<int, n>(gen);
     for (int i = 0; i < n; i++)
-        std::cout << initial[i] << " ";
+        std::cout << arr[i] << " ";
         
     return 0;
 }

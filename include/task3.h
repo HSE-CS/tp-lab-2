@@ -3,10 +3,9 @@
 
 template<class T, unsigned int size>
 
-void map(T *initial, T(*changer)(T)) {
+void map(T *arr, T(*changer)(T)) {
 
     for (unsigned int i = 0; i < size; i++)
-        initial[i] = changer(initial[i]);
+        arr[i] = changer(arr[i]);
 }
-
 #endif
