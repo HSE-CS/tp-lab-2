@@ -14,8 +14,9 @@ T* createArr(T (*gen)() ){
 }
 
 int generate(){
-    std::random_device rd;
-    std::uniform_int_distribution<int> uid(-50, 50);
-    return uid(rd);
+//    std::random_device rd;
+//    std::uniform_int_distribution<int> uid(-50, 50);
+//    return uid(rd);
+    return std::rand();
 }
 
