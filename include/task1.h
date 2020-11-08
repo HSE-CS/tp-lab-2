@@ -12,7 +12,7 @@ void MergeSort(T *arr, int left, int right) {
     MergeSort(arr, mid + 1, right);
     int rfirst = left;
     int lfirst = mid + 1;
-    T *temp = new T[right];
+    T *temp = new T[right+1];
     for (int i = 0; i <= right - left; i++) {
         if (((arr[rfirst] < arr[lfirst]) && (rfirst <= mid)) || (lfirst > right)) {
             temp[i] = arr[rfirst];
@@ -36,7 +36,7 @@ void MergeSort(char **arr, int left, int right) {
     MergeSort(arr, mid + 1, right);
     int rfirst = left;
     int lfirst = mid + 1;
-    char **temp = new char *[right];
+    char **temp = new char *[right+1];
     for (int i = 0; i <= right - left; i++) {
         if (((strlen(arr[rfirst]) < strlen(arr[lfirst])) && (rfirst <= mid)) || (lfirst > right)) {
             temp[i] = arr[rfirst];
