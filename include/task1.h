@@ -3,6 +3,10 @@
 #include <cstring>
 #include <vector>
 #include <cstddef>
+#include <utility>
+#include <iterator>
+#include <algorithm>
+
 
 template <typename T>
 bool sort_criteria(const T lhs, const T rhs)
