@@ -4,18 +4,16 @@
 #include <iostream>
 
 
-template <typename T> void msort(T* a, int n){
-	int mid = (n + n % 4) / 2;
-	if (n % 2 == 1)
-		mid++;
-	int h = 1;
+template <typename T> 
+void msort(T* a, int n){
+	int mid = (n + 1) / 2;
+	//std::cout << '(' << mid << ")\n";
 	T* c = (T*)malloc(n * sizeof(T));
-	while (h < n){
-		int step = h;
+	for (int h = 1; h < n; h *= 2) {
 		int i = 0;
 		int j = mid;
 		int k = 0;
-		while(step <= mid){
+		for (int step = h; step <= mid; step += h) {
 			while ((i < step) && (j < n) && (j < (mid + step))){
 				if (a[i] < a[j]){
 					c[k] = a[i];
@@ -33,26 +31,21 @@ template <typename T> void msort(T* a, int n){
 				c[k] = a[j];
 				j++; k++;
 			}
-			step += h;
 		}
-		h *= 2;
 		for (i = 0; i < n; i++)
 			a[i] = c[i];
 	}
 }
-template<> void msort<>(char** a, int n){
-	int mid = (n + n % 4) / 2;
-	if (n % 2 == 1)
-		mid++;
+template<> 
+void msort<>(char** a, int n){
+	int mid = (n + 1) / 2;
 
-	int h = 1;
 	char** c = (char**)malloc(n * sizeof(char*));
-	while (h < n){
-		int step = h;
+	for (int h = 1; h < n; h *= 2) {
 		int i = 0;
 		int j = mid;
 		int k = 0;
-		while (step <= mid){
+		for (int step = h; step <= mid; step += h) {
 			while ((i < step) && (j < n) && (j < (mid + step))){
 				if (strlen(a[i]) < strlen(a[j])){
 					c[k] = a[i];
@@ -70,9 +63,7 @@ template<> void msort<>(char** a, int n){
 				c[k] = a[j];
 				j++; k++;
 			}
-			step += h;
 		}
-		h *=2;
 		for (i = 0; i < n; i++)
 			a[i] = c[i];
 	}
