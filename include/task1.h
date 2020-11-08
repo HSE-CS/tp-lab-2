@@ -44,7 +44,7 @@ void merge(char** arr, char** arr_l, char** arr_r, size_t left, size_t right, si
 	size_t l_idx = 0, r_idx = 0, idx = 0;
 	for (size_t i = 0; i < size; ++i) {
 		if ((l_idx < left) && (r_idx < right)) {
-			if (arr_l[l_idx] < arr_r[r_idx]) {
+			if (strlen(arr_l[l_idx]) < strlen(arr_r[r_idx])) {
 				arr[i] = arr_l[l_idx];
 				l_idx++;
 			}
@@ -116,7 +116,7 @@ void msort(char** arr, size_t size) {
 	}
 	msort(tmp_arr_r, right);
 
-	merge<char**>(arr, tmp_arr_l, tmp_arr_r, left, right, size);
+	merge(arr, tmp_arr_l, tmp_arr_r, left, right, size);
 }
 
 #endif
