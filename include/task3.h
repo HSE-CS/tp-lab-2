@@ -4,7 +4,7 @@
 #define TASK1_TASK3_H
 
 template <class T, size_t size>
-T map(T (&inputArr)[size], T (*change)()){
+void map(T *inputArr, T (*change)(T)){
     for (int i = 0; i < size; ++i) {
         inputArr[i] = change(inputArr[i]);
     }
