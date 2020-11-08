@@ -6,7 +6,7 @@
 #include <cstring>
 
 template<typename T, size_t n>
-T* createArr(T* mass,  T (*change)(T))
+T* map(T* mass,  T (*change)(T))
 {
 
 	for (int i = 0; i < n; i++)
