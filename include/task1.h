@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
+using namespace std;
 template <typename T>
 bool sort_criteria(const T lhs, const T rhs)
 {

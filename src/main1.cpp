@@ -2,6 +2,14 @@
 
 #include <iostream>
 #include <string>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <utility>
+#include <cmath>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
 
 template <typename T>
 void process_and_print(std::vector<T> v)
