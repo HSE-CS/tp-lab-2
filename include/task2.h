@@ -1,11 +1,11 @@
 #ifndef TASK2_H
 #define TASK2_H
 
-int gen() {
-	static int a = 0;
-	++a;
-	return a;
-}
+//int gen() {
+//	static int a = 0;
+//	++a;
+//	return a;
+//}
 
 template<typename T, size_t n>
 T *createArr(T(*gen)()) {

@@ -3,9 +3,9 @@
 
 #include <cstring>
 
-int change(int v) {
-	return v + 1;
-}
+//int change(int v) {
+//	return v + 1;
+//}
 
 template<typename T, size_t n>
 void map(T(&arr)[n], T(*change)(T v)) {
