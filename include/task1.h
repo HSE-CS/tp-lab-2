@@ -44,8 +44,8 @@ template<typename T>
 void mergeSort(T* arr, int left, int right) {
 	if (left < right)
 	{
-		MergeSort(arr, left, (left + right) / 2); //сортировка левой части
-		MergeSort(arr, (left + right) / 2 + 1, right); //сортировка правой части
+		mergeSort(arr, left, (left + right) / 2); //сортировка левой части
+		mergeSort(arr, (left + right) / 2 + 1, right); //сортировка правой части
 		Merge(arr, left, right); //слияние двух частей
 	}
 }
@@ -55,5 +55,5 @@ void msort(T* arr, size_t size)
 {
 	int left = 0;
 	int right = size - 1;
-	MergeSort(arr, left, right);
+	mergeSort(arr, left, right);
 }
