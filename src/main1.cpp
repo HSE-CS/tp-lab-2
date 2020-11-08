@@ -1,4 +1,4 @@
-//
-// Created by Alexey Gerasimov on 08.11.2020.
-//
-
+#include "task1.h"
+int main(){
+    return 0;
+}
