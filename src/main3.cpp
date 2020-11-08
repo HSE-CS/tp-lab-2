@@ -1,0 +1,10 @@
+#include <iostream>
+#include <cstring>
+#include "../include/task3.h"
+
+int main() {
+    const size_t n = 5;
+	int arr[n]{1, 2, 3, 4, 5};
+	map<int, n>(arr, change);
+    return 0;
+}
