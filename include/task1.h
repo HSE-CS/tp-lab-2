@@ -21,7 +21,6 @@ void merge(T arr[], int l, int mid, int r) {
         temp[p3++] = arr[p1++];
     for (p3 = 0; p3 < r - l + 1; p3++)
         arr[l + p3] = temp[p3];
-    delete temp[r - l + 1];
 }
 
 template<class T>
@@ -42,7 +41,6 @@ void merge(char** arr, int l, int mid, int r) {
         temp[p3++] = arr[p1++];
     for (p3 = 0; p3 < r - l + 1; p3++)
         arr[l + p3] = temp[p3];
-    delete temp[r - l + 1];
 }
 
 template<class T>
