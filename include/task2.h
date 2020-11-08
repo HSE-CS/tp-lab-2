@@ -2,9 +2,6 @@
 // Created by Алексей Трутнев on 07.11.2020.
 //
 
-#ifndef UNTITLED11_TASK2_H
-#define UNTITLED11_TASK2_H
-
 #include<iostream>
 #include <random>
 
@@ -16,10 +13,9 @@ T* createArr(T (*gen)() ){
     return arr;
 }
 
-//int generate(){
-//    std::random_device rd;
-//    std::uniform_int_distribution<int> uid(-50, 50);
-//    return uid(rd);
-//}
+int generate(){
+    std::random_device rd;
+    std::uniform_int_distribution<int> uid(-50, 50);
+    return uid(rd);
+}
 
-#endif //UNTITLED11_TASK2_H

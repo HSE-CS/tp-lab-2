@@ -2,9 +2,6 @@
 // Created by Алексей Трутнев on 07.11.2020.
 //
 
-#ifndef UNTITLED11_TASK1_H
-#define UNTITLED11_TASK1_H
-
 #include<iostream>
 #include<cstring>
 
@@ -62,4 +59,3 @@ void msort(T* arr, size_t size) {
     merge(arr, l_arr, r_arr, l_size, r_size, size);
 }
 
-#endif //UNTITLED11_TASK1_H
