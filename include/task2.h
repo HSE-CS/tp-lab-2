@@ -15,10 +15,6 @@ T* createArr(T(*gen)())
     return a;
  }
 
-template<typename T> 
-T gen() {
-    return rand();
-}
 
 
 #endif
