@@ -5,10 +5,9 @@ int change(int a) {
 }
 
 int main() {
-    int size = 10;
-    int* array = new int[size];
-    map<int, size>(array, &change);
-    for (int i = 0; i < size; ++i) {
+    int* array = new int[10];
+    map<int, 10>(array, &change);
+    for (int i = 0; i < 10; ++i) {
         std::cout << array[i] << " ";
     }
     

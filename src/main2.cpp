@@ -8,9 +8,8 @@ int gen() {
 }
 
 int main() {
-    int size = 10;
-    int* A = createArr<int, size>(&gen);
-    for (int i = 0; i < size; ++i) {
+    int* A = createArr<int,10>(&gen);
+    for (int i = 0; i < 10; ++i) {
         std::cout << A[i] << " ";
     }
 }
