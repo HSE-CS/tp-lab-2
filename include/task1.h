@@ -8,12 +8,12 @@ using namespace std;
 
 template <class T>
 bool comp(T a, T b) {
-    return a > b;
+    return a < b;
 }
 
 template <>
 bool comp(char *a, char *b){
-    return strlen(a) > strlen(b);
+    return strlen(a) < strlen(b);
 }
 
 template <class T>
@@ -29,9 +29,9 @@ void msort(T *arr, int end, int start = 0){
     int i = start, j = mid, counter = 0;
     while (i < mid && j < end){
         if (comp(arr[i], arr[j]))
-            temp[counter++] = arr[j++];
-        else
             temp[counter++] = arr[i++];
+        else
+            temp[counter++] = arr[j++];
     }
     while (i < mid)
         temp[counter++] = arr[i++];
