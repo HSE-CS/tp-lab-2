@@ -11,7 +11,7 @@ void process_and_print(std::vector<T> v)
 	for (const auto& el : v)
 		std::cout << el << " ";
 	std::cout << std::endl;
-	msort(v);
+	msort(v.data(), v.size());
 	std::cout << "Отсортированный вектор: ";
 	for (const auto& el : v)
 		std::cout << el << " ";

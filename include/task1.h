@@ -17,15 +17,15 @@ bool sort_criteria(char* lhs, char* rhs)
 }
 
 template <typename T>
-void msort_impl(T* arr, unsigned long size)
+void msort(T* arr, unsigned long size)
 {
 	if (size > 1)
 	{
 		const auto left_size = size / 2;
 		const auto right_size = size - left_size;
 
-		msort_impl(arr, left_size);
-		msort_impl(arr + left_size, right_size);
+		msort(arr, left_size);
+		msort(arr + left_size, right_size);
 
 		unsigned long left_idx = 0;
 		unsigned long right_idx = left_size;
@@ -55,10 +55,4 @@ void msort_impl(T* arr, unsigned long size)
 
 		delete[] tmp;
 	}
-}
-
-template <typename T>
-void msort(std::vector<T> &v)
-{
-	msort_impl(v.data(), v.size());
 }

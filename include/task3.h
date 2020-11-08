@@ -2,11 +2,11 @@
 
 #include <cstddef>
 
-template <typename T>
-void map(T arr[], unsigned long size, void (*change)(T& elem))
+template <typename T, unsigned long N>
+void map(T *arr, T (*change)(T elem))
 {
-	for (unsigned long i = 0; i < size; ++i)
+	for (unsigned long i = 0; i < N; ++i)
 	{
-		change(arr[i]);
+		arr[i] = change(arr[i]);
 	}
 }
