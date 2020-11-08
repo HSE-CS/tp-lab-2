@@ -8,12 +8,10 @@ T change(T a) {
 }
 
 int main() {
-
-    const int size = 5;
+const int size = 5;
 
     int arr[size]{ 5, 17, 9, 3, 4 };
-
-    for (int i = 0; i < size; i++)
+for (int i = 0; i < size; i++)
         std::cout << arr[i] << " ";
     std::cout << std::endl;
 
