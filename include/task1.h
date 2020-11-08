@@ -50,8 +50,8 @@ void msort(T *arr, size_t n) {
 		    while (j < r_size)
 			    arr[k++] = l_arr[j++];
 
-        delete l_arr[];
-        delete r_arr[];
+        delete l_arr;
+        delete r_arr;
 	}
 }
 
