@@ -11,8 +11,8 @@ using namespace std;
 
 template <typename T> void msort(T* a, int n)
 {
-    int mid = n / 2 + 1;
-    if (n % 2 == 1)
+    int mid = n / 2;
+    if (n % 2 == 0)
         mid++;
 
     int h = 1;
@@ -59,8 +59,8 @@ template <typename T> void msort(T* a, int n)
 
 template<> void msort<>(char** a, int n)
 {
-    int mid = (n + n % 4) / 2;
-    if (n % 2 == 1)
+    int mid = n / 2;
+    if (n % 2 == 0)
         mid++;
 
     int h = 1;
