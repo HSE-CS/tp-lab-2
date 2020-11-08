@@ -1,0 +1,17 @@
+#ifndef TASK3_H
+#define TASK3_H
+#include <iostream>
+
+int change(int element)
+{
+    return element * 10;
+};
+
+template <typename T, size_t arraySize>
+void map(T (&array)[arraySize], T (*change)(T element))
+{
+    for (size_t i = 0; i < arraySize; i++)
+        array[i] = change(array[i]);
+};
+
+#endif
