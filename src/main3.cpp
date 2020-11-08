@@ -17,7 +17,7 @@ char* change(char* val){
 	return val;
 }
 
-/*
+
 int main(){
 	int arr[SIZE3]{ 1, -3, 5, 9, 2 };
 	map<int, SIZE3>(arr, change);
@@ -28,4 +28,3 @@ int main(){
 
 	return 0;
 }
-*/

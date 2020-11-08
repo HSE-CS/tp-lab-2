@@ -22,7 +22,7 @@ char* gen() {
 	return s;
 }
 
-/*
+
 int main() {
 	srand(time(0));
 	int* arr = createArr<int, SIZE2>(gen);
@@ -32,4 +32,3 @@ int main() {
 	std::cout << "\n";
 	return 0;
 }
-*/
