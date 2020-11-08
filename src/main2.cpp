@@ -1,17 +1,13 @@
 #include "task2.h"
 
-
-#include <cstddef>
 #include <iostream>
 
-using std::size_t;
-
-size_t fibonacci_generator()
+unsigned long fibonacci_generator()
 {
-	static size_t F_curr = 0;
-	static size_t F_next = 1;
-	const size_t sum = F_curr + F_next;
-	const size_t number = F_curr;
+	static unsigned long F_curr = 0;
+	static unsigned long F_next = 1;
+	const unsigned long sum = F_curr + F_next;
+	const unsigned long number = F_curr;
 	F_curr = F_next;
 	F_next = sum;
 	return number;
@@ -29,9 +25,9 @@ T arithmetic_progression()
 int main()
 {
 	{
-		const size_t count = 13;
+		const unsigned long count = 13;
 		std::cout << "Fibonacci sequence (" << count << " elements):" << std::endl;
-		const auto arr = createArr<size_t, count>(fibonacci_generator);
+		const auto arr = createArr<unsigned long, count>(fibonacci_generator);
 		for (int i = 0; i < count; ++i)
 		{
 			std::cout << arr[i];
@@ -43,11 +39,11 @@ int main()
 	}
 
 	{
-		const size_t count = 15;
-		const size_t start = 3;
-		const size_t end = 5;
+		const unsigned long count = 15;
+		const unsigned long start = 3;
+		const unsigned long end = 5;
 		std::cout << "Arithmetic progression (" << count << " elements):" << std::endl;
-		const auto arr = createArr<size_t, count>(arithmetic_progression<size_t, start, end>);
+		const auto arr = createArr<unsigned long, count>(arithmetic_progression<unsigned long, start, end>);
 		for (int i = 0; i < count; ++i)
 		{
 			std::cout << arr[i];

@@ -1,14 +1,10 @@
 #pragma once
 
-#include <cstddef>
-
-using std::size_t;
-
-template <typename T, size_t N>
+template <typename T, unsigned long N>
 T* createArr(T (*gen)())
 {
 	auto arr = new T[N];
-	for (size_t i = 0; i < N; ++i)
+	for (unsigned long i = 0; i < N; ++i)
 		arr[i] = gen();
 	return arr;
 }

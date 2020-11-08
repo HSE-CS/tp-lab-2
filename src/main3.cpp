@@ -1,9 +1,5 @@
 #include "task3.h"
-
-#include <cstddef>
 #include <iostream>
-
-using std::size_t;
 
 template <typename T>
 void change(T& elem)
@@ -15,7 +11,7 @@ int main()
 {
 	{
 		std::cout << "Division by 3" << std::endl;
-		const size_t count = 5;
+		const unsigned long count = 5;
 		double arr[count] = { 1, 2.5, 3, 4, -99999.9 };
 		std::cout << "Initial array:" << std::endl;
 		for (int i = 0; i < count; ++i)

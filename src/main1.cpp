@@ -2,9 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include <cstddef>
-
-using std::size_t;
+#include <vector>
 
 template <typename T>
 void process_and_print(std::vector<T> v)

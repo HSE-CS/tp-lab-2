@@ -4,8 +4,6 @@
 #include <vector>
 #include <cstddef>
 
-using std::size_t;
-
 template <typename T>
 bool sort_criteria(const T lhs, const T rhs)
 {
@@ -19,7 +17,7 @@ bool sort_criteria(char* lhs, char* rhs)
 }
 
 template <typename T>
-void msort_impl(T* arr, size_t size)
+void msort_impl(T* arr, unsigned long size)
 {
 	if (size > 1)
 	{
@@ -29,9 +27,9 @@ void msort_impl(T* arr, size_t size)
 		msort_impl(arr, left_size);
 		msort_impl(arr + left_size, right_size);
 
-		size_t left_idx = 0;
-		size_t right_idx = left_size;
-		size_t idx = 0;
+		unsigned long left_idx = 0;
+		unsigned long right_idx = left_size;
+		unsigned long idx = 0;
 
 		auto tmp = new T[size];
 
