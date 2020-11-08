@@ -12,7 +12,7 @@ int main()
 	for (size_t i = 0; i < arr.size(); ++i)
 		cout << arr[i] <<' ';
 	cout << endl;
-	mSort(arr, 0, arr.size());
+	msort(arr, 0, arr.size());
 	for (auto i : arr)
 		cout << i << ' ';
 	cout << endl;
@@ -20,7 +20,7 @@ int main()
 	for (auto i : arr_str)
 		cout << i << ' ';
 	cout << endl;
-	mSort(arr_str, 0, arr_str.size());
+	msort(arr_str, 0, arr_str.size());
 	for (auto i : arr_str)
 		cout << i << ' ';
 	cout << endl;

@@ -15,7 +15,7 @@ template <> bool comp<char *>(char * a, char * b)
 }
 
 
-template <typename T> void mSort(std::vector <T> &a, size_t start, size_t end)
+template <typename T> void msort(std::vector <T> &a, size_t start, size_t end)
 {
 	if (end - start < 2)
 		return;
@@ -25,8 +25,8 @@ template <typename T> void mSort(std::vector <T> &a, size_t start, size_t end)
 			std::swap(a[start], a[start + 1]);
 		return;
 	}
-	mSort(a, start, start + (end - start) / 2);
-	mSort(a, start + (end - start) / 2, end);
+	msort(a, start, start + (end - start) / 2);
+	msort(a, start + (end - start) / 2, end);
 	std::vector <T> b;
 	size_t b1 = start;
 	size_t e1 = start + (end - start) / 2;
