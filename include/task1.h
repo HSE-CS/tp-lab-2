@@ -17,13 +17,13 @@ bool comp(char *a, char *b){
 }
 
 template <class T>
-void mergeSort(T *arr, int start, int end){
+void msort(T *arr, int start, int end){
     if (end-start <= 1)
         return;
     int mid = (start + end) / 2;
 
-    mergeSort(arr, start, mid);
-    mergeSort(arr, mid, end);
+    msort(arr, start, mid);
+    msort(arr, mid, end);
 
     T *temp = new T[end-start];
     int i = start, j = mid, counter = 0;
