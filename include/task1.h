@@ -3,7 +3,7 @@
 //
 
 #include<iostream>
-#include<cstring>
+#include<string.h>
 
 template<class T>
 bool comp(T a, T b){
