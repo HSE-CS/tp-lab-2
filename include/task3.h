@@ -10,15 +10,18 @@
 #define task3_h
 
 #pragma once
-
 #include <iostream>
 #include <string.h>
 
-template<typename T, size_t size>
-void map(T* arr, T(*change)(T val))
-{
-    for (size_t i = 0; i < size; i++)
-    {
-        arr[i] = change(arr[i]);
-    }
+ template<typename T, size_t size>
+ void map(T* arr, T(*change)(T val))
+ {
+     for (size_t i = 0; i < size; i++)
+     {
+         arr[i] = change(arr[i]);
+     }
+ }
+
+
+ #endif
 #endif /* task3_h */
