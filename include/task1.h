@@ -56,6 +56,6 @@ void msort(T* arr, size_t size) {
         r_arr[i] = arr[i + l_size];
     msort(r_arr, r_size);
 
-    merge(arr, l_arr, r_arr, l_size, r_size, size);
+    merge<T>(arr, l_arr, r_arr, l_size, r_size, size);
 }
 
