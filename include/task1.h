@@ -2,7 +2,10 @@
 
 #include <cstring>
 #include <vector>
-
+#include "stdafx.h"
+#include <utility> 
+#include <string>
+using namespace std;
 template <typename T>
 bool sort_criteria(const T lhs, const T rhs)
 {
