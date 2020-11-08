@@ -2,70 +2,53 @@
 #define TASK1_H
 #include <string.h>
 #include <iostream>
+using namespace std;
 
-
-template <typename T> 
-void msort(T* a, int n){
-	int mid = (n + 1) / 2;
-	//std::cout << '(' << mid << ")\n";
-	T* c = (T*)malloc(n * sizeof(T));
-	for (int h = 1; h < n; h *= 2) {
-		int i = 0;
-		int j = mid;
-		int k = 0;
-		for (int step = h; step <= mid; step += h) {
-			while ((i < step) && (j < n) && (j < (mid + step))){
-				if (a[i] < a[j]){
-					c[k] = a[i];
-					i++; k++;
-				} else {
-					c[k] = a[j];
-					j++; k++;
-				}
-			}
-			while (i < step){
-				c[k] = a[i];
-				i++; k++;
-			}
-			while ((j < (mid + step)) && (j < n)){
-				c[k] = a[j];
-				j++; k++;
-			}
-		}
-		for (i = 0; i < n; i++)
-			a[i] = c[i];
-	}
+template<typename T>
+bool comp(T a, T b) {
+	return a < b;
 }
-template<> 
-void msort<>(char** a, int n){
-	int mid = (n + 1) / 2;
 
-	char** c = (char**)malloc(n * sizeof(char*));
-	for (int h = 1; h < n; h *= 2) {
-		int i = 0;
-		int j = mid;
-		int k = 0;
-		for (int step = h; step <= mid; step += h) {
-			while ((i < step) && (j < n) && (j < (mid + step))){
-				if (strlen(a[i]) < strlen(a[j])){
-					c[k] = a[i];
-					i++; k++;
-				} else {
-					c[k] = a[j];
-					j++; k++;
-				}
-			}
-			while (i < step){
-				c[k] = a[i];
-				i++; k++;
-			}
-			while ((j < (mid + step)) && (j < n)){
-				c[k] = a[j];
-				j++; k++;
-			}
+template<>
+bool comp(char *a, char *b) {
+	return strlen(a) < strlen(b);
+}
+
+template<typename T>
+void merge(T *a, size_t n) {
+	size_t c = n / 2;
+	size_t i = 0;
+	size_t j = n / 2;
+	size_t k = 0;
+	T *tmp = new T[n];
+	while (i < c && j < n) 
+		if (comp(a[i], a[j])) {
+			tmp[k] = a[i];
+			++k; ++i;
 		}
-		for (i = 0; i < n; i++)
-			a[i] = c[i];
+		else {
+			tmp[k] = a[j];
+			++k; ++j;
+		}
+	while (i < c) {
+		tmp[k] = a[i];
+		++k; ++i;
+	}
+	while (j < n) {
+		tmp[k] = a[j];
+		++k; ++j;
+	}
+	for (size_t i = 0; i < n; ++i) 
+		a[i] = tmp[i];
+}
+
+template<typename T>
+void msort(T *arr, size_t n) {
+	if (n >= 2) {
+		size_t new_size = n / 2;
+		msort(arr, new_size);
+		msort(arr + new_size, n - new_size);
+		merge(arr, n);
 	}
 }
 #endif 

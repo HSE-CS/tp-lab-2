@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-	const size_t n = 8;
-	int val[n]{ 8,10,30,50,5,1,5,78 };
+	const size_t n = 6;
+	int val[n]{ 4,4,1,2,3,5 };
 	msort(val, n);
 
 	for (size_t i = 0; i < n; i++)
