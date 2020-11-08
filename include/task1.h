@@ -3,6 +3,7 @@
 
 
 #include<string.h>
+#include <iostream>
 
 
 template<class T>
@@ -18,6 +19,7 @@ template<> bool comp<char*>(char* a, char* b)
 template<class T>
 void msort(T *arr, size_t n) {
 	if (n > 1) {
+
 		size_t l_size = n / 2;
 		size_t r_size = n - l_size;
 		T *l_arr = new T[l_size];
@@ -48,7 +50,7 @@ void msort(T *arr, size_t n) {
 			    arr[k++] = l_arr[i++];
 	    else if (j < r_size)
 		    while (j < r_size)
-			    arr[k++] = l_arr[j++];
+			    arr[k++] = r_arr[j++];
 
         delete l_arr;
         delete r_arr;
