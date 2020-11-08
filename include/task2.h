@@ -14,7 +14,7 @@ T *createArr(T (*gen)())
 {
     T *newArray = new T[N];
     for (size_t i = 0; i < N; i++)
-        newArray[i] = (T)gen();
+        newArray[i] = gen();
     return newArray;
 };
 
