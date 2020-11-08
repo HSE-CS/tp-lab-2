@@ -18,20 +18,20 @@ bool comp(T a, T b)
 template <>
 bool comp(char* a, char* b)
 {
-	if (strlen(a) > strlen(b))
+	if (strlen(a) >= strlen(b))
 		return 0;
 	else
 		return 1;
 }
 
-template<typename T> 
-void msort(T* arr, int last, int first = 0)
+template<typename T>
+void mersort(T* arr, int first, int last)
 {
 	if (first >= last)
 		return;
 	int mid = first + (last - first) / 2;
-	msort(arr, mid, first);
-	msort(arr, last, mid + 1);
+	mersort(arr, first, mid);
+	mersort(arr, mid + 1, last);
 
 	T* buf = new T[last + 1];
 
@@ -54,10 +54,16 @@ void msort(T* arr, int last, int first = 0)
 			j++;
 		}
 	}
-	
+
 	for (int h = 0; h < last - first + 1; h++)
 		arr[first + h] = buf[h];
 
 	delete[] buf;
 }
+
+template<typename T>
+void msort(T* arr, int n) {
+	mersort(arr, 0, n - 1);
+}
+
 #endif
