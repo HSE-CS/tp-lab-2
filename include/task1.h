@@ -38,17 +38,17 @@ void msort(T *arr, size_t n) {
 	    while (i != l_size && j != r_size)
 	    {
 		    if (comp(l_arr[i], r_arr[j]))
-			    arr[k++] = arr_left[i++];
+			    arr[k++] = l_arr[i++];
 		    else
-			    arr[k++] = arr_right[j++];
+			    arr[k++] = r_arr[j++];
 	    }
 
 	    if (i < l_size)
 		    while (i < l_size)
-			    arr[k++] = arr_left[i++];
+			    arr[k++] = l_arr[i++];
 	    else if (j < r_size)
 		    while (j < r_size)
-			    arr[k++] = arr_right[j++];
+			    arr[k++] = l_arr[j++];
 
         delete l_arr[];
         delete r_arr[];
