@@ -1,15 +1,13 @@
 #pragma once
-#include <stdio.h>
+#include <stddef.h>
 #include <stdlib.h>
-#include <cstdlib>
+#include <string.h>
+#include <utility>
 #include <iostream>
-#include <cstring>
-#include <map>
-#include <memory>
-#include <vector>
-#include <utility> 
-#include <string>
-using namespace std;
+#include <cmath>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
 template <typename T>
 bool sort_criteria(const T lhs, const T rhs)
 {
