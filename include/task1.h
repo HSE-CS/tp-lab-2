@@ -40,22 +40,22 @@ void msort(T* arr, unsigned long size)
 		while (left_idx < left_size || right_idx < size)
 		{
 			if (sort_criteria(arr[left_idx], arr[right_idx]))
-				tmp[idx++] = std::move(arr[left_idx++]);
+				tmp[idx++] = ::std::move(arr[left_idx++]);
 			else
-				tmp[idx++] = std::move(arr[right_idx++]);
+				tmp[idx++] = ::std::move(arr[right_idx++]);
 
 			if (left_idx == left_size)
 			{
-				std::copy(std::make_move_iterator(&arr[right_idx]), std::make_move_iterator(&arr[size]), &tmp[idx]);
+				::std::copy(::std::make_move_iterator(&arr[right_idx]), ::std::make_move_iterator(&arr[size]), &tmp[idx]);
 				break;
 			}
 			if (right_idx == size)
 			{
-				std::copy(std::make_move_iterator(&arr[left_idx]), std::make_move_iterator(&arr[left_size]), &tmp[idx]);
+				::std::copy(::std::make_move_iterator(&arr[left_idx]), ::std::make_move_iterator(&arr[left_size]), &tmp[idx]);
 				break;
 			}
 		}
-		std::copy(std::make_move_iterator(tmp), std::make_move_iterator(&tmp[size]), arr);
+		::std::copy(::std::make_move_iterator(tmp), ::std::make_move_iterator(&tmp[size]), arr);
 
 		delete[] tmp;
 	}
