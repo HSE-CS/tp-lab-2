@@ -4,7 +4,7 @@
 
 int change(int element)
 {
-    return element * 10;
+    return element / 2;
 };
 
 template <typename T, size_t arraySize>

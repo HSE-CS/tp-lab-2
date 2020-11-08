@@ -5,7 +5,7 @@
 
 int gen()
 {
-    int num = rand();
+    int num = rand() % 10;
     return num;
 };
 

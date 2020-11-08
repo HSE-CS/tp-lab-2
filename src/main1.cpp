@@ -16,5 +16,6 @@ int main()
     msort(strArray, strArraySize);
     for (size_t i = 0; i < strArraySize; i++)
         std::cout << strArray[i] << "  ";
+    std::cout << std::endl;
     return 0;
 }

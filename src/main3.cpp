@@ -7,5 +7,6 @@ int main()
     map<int, arraySize>(array, change);
     for (size_t i = 0; i < arraySize; i++)
         std::cout << array[i] << " ";
+    std::cout << std::endl;
     return 0;
 }
