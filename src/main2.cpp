@@ -1,11 +1,11 @@
 #include "task2.h"
-#include <iostream>
-
-using namespace std;
 
 int main()
 {
-
-	int b;
+	const size_t arraySize = 10;
+	int* array = createArr<int, arraySize>(genUpTo10);
+	for (size_t i = 0; i < arraySize; i++)
+		std::cout << array[i] << " ";
+	std::cout << std::endl;
 	return 0;
 }

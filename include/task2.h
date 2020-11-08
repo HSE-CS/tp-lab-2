@@ -1,20 +1,21 @@
 #ifndef TASK2_H
 #define TASK2_H
-
-#include <algorithm>
 #include <iostream>
 #include <cstdlib>
-#include <ctime>
-#include <cstring>
 
-template<typename T, size_t n>
+int genUpTo10()
+{
+	int num = rand() % 10;
+	return num;
+};
+
+template <typename T, size_t N>
 T* createArr(T(*gen)())
 {
-	T* a = new T[n];
+	T* newArray = new T[N];
+	for (size_t i = 0; i < N; i++)
+		newArray[i] = gen();
+	return newArray;
+};
 
-	for (int i = 0; i < n; i++)
-	{
-		a[i] = gen();
-	}
-	return a;
-}
+#endif
