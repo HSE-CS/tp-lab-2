@@ -1,5 +1,6 @@
 #include <iostream>
 #include "task3.h"
+#include<string.h>
 
 
 template<class T> T change(T val) {
@@ -13,7 +14,7 @@ template<> char* change(char* val) {
 	return val;
 }
 
-int main3() {
+int main() {
 
 	/*const size_t n = 5;
 	int arr[n]{ 1, 2, 3, 4, 5 };
