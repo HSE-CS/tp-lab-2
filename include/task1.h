@@ -59,7 +59,7 @@ void mergeSort(T arrToSort[], int l, int r) {
 
 template<class T>
 void msort(T arrToSort[], int size) {
-    mergeSort(arrToSort, 0, size);
+    mergeSort(arrToSort, 0, size-1);
 }
 
 #endif //TASK1_TASK1_H
