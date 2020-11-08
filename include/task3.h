@@ -12,7 +12,7 @@ void map(T arr[], T (*change)(T)) {
 }
 
 template<class T>
-int change(T a) {
+int change_arr(T a) {
     return a + a;
 }
 
