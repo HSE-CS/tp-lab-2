@@ -2,7 +2,6 @@
 
 #include <cstring>
 #include <vector>
-#include "stdafx.h"
 #include <utility> 
 #include <string>
 using namespace std;
