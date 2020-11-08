@@ -1,7 +1,11 @@
 #pragma once
+#include <stdio.h>
+#include <stdlib.h>
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
 #include <map>
 #include <memory>
-#include <cstring>
 #include <vector>
 #include <utility> 
 #include <string>
