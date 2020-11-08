@@ -33,7 +33,7 @@ void msort(T *arr, size_t n) {
 		}
 		msort(r_arr, r_size);
 
-        unsigned i = 0, j = 0, k = left;
+        unsigned i = 0, j = 0, k = 0;
 
 	    while (i != l_size && j != r_size)
 	    {
