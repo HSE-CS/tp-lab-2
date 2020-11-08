@@ -7,7 +7,7 @@
 
 template <typename T, int n> void map(T* array, T (*change)(T value))
 {
-    for(size_t i = 0; i < n; i++) array[i] = change(a[i]);
+    for(size_t i = 0; i < n; i++) array[i] = change(array[i]);
 }
 
 
