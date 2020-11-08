@@ -9,7 +9,7 @@ int main(){
     cout << "The array before msort:" << endl;
     printArr(a, n);
 
-    msort(a,0, n);
+    msort(a, n);
 
     cout << "The array after msort:" << endl;
     printArr(a, 5);
@@ -18,7 +18,7 @@ int main(){
     cout << "\nThe array before msort:" << endl;
     printArr(ss, n);
 
-    msort(ss,0, n);
+    msort(ss, n);
 
     cout << "The array after msort:" << endl;
     printArr(ss, 5);
