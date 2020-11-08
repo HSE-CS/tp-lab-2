@@ -2,6 +2,7 @@
 #define task3_h
 
 #include <iostream>
+#include <cstring>
 
 template <typename T, int N>
 void map(T *arr, T (*change)(T)) {
