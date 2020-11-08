@@ -1,7 +1,10 @@
-#include "task2.h"
+#include "task.h"
+
+
 #include <cstddef>
 #include <iostream>
-using namespace std;
+
+using std::size_t;
 
 size_t fibonacci_generator()
 {

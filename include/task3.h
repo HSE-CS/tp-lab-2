@@ -1,5 +1,9 @@
 #pragma once
 
+#include <cstddef>
+
+using std::size_t;
+
 template <typename T>
 void map(T arr[], size_t size, void (*change)(T& elem))
 {

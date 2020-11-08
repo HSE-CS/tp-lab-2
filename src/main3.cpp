@@ -1,6 +1,9 @@
-#include "task3.h"
+#include "task.h"
 
+#include <cstddef>
 #include <iostream>
+
+using std::size_t;
 
 template <typename T>
 void change(T& elem)
