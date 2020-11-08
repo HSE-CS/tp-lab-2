@@ -6,3 +6,13 @@
 
 #IncludeRegexTransform: 
 
+../include/task1.h
+cstring
+-
+iostream
+-
+
+/home/toliman/Projects/HSE-CS/TP-LAB-2/tp-Lab-2/src/main1.cpp
+task1.h
+/home/toliman/Projects/HSE-CS/TP-LAB-2/tp-Lab-2/src/task1.h
+
