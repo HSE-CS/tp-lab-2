@@ -1,5 +1,6 @@
 #pragma once
-
+#include <cstddef>
+using namespace std;
 template <typename T, size_t N>
 T* createArr(T (*gen)())
 {
