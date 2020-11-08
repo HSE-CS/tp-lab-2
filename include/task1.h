@@ -2,6 +2,7 @@
 #define TASK1_TASK1_H
 
 #include <cstring>
+#include <iostream>
 
 template<class T>
 void merge(T arr[], int l, int mid, int r) {
@@ -23,7 +24,7 @@ void merge(T arr[], int l, int mid, int r) {
         arr[l + p3] = temp[p3];
 }
 
-template<class T>
+template<>
 void merge(char** arr, int l, int mid, int r) {
     int p1 = l;
     int p2 = mid + 1;
