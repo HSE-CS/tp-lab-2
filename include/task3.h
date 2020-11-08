@@ -5,6 +5,8 @@
 #ifndef UNTITLED11_TASK3_H
 #define UNTITLED11_TASK3_H
 
+#include <iostream>
+
 template<class T, size_t size>
 void map(T arr[], T (*change)(T)) {
     for (size_t i = {0}; i < size; ++i)

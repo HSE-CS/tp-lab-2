@@ -16,11 +16,10 @@ T* createArr(T (*gen)() ){
     return arr;
 }
 
-int generate() {
-//    std::random_device rd;
-//    std::uniform_int_distribution<int> uid(-50, 50);
-//    return uid(rd);
-    return 1;
+int generate(){
+    std::random_device rd;
+    std::uniform_int_distribution<int> uid(-50, 50);
+    return uid(rd);
 }
 
 #endif //UNTITLED11_TASK2_H
