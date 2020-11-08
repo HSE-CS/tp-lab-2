@@ -2,7 +2,7 @@
 #define TASK3_H
 #include <iostream>
 
-int change(int element)
+int changeMod2(int element)
 {
     return element / 2;
 };

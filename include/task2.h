@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 
-int gen()
+int genUpTo10()
 {
     int num = rand() % 10;
     return num;
