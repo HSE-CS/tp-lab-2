@@ -4,7 +4,7 @@
 
 template <typename T> void msort(T* val, int n){
 	int h = 1;
-	int* arr = (int*)malloc(n * sizeof(int));
+	T* arr = (T*)malloc(n * sizeof(T));
 	while (h<n){
 		int index = 0;
 		int left=0;
@@ -30,7 +30,7 @@ template <typename T> void msort(T* val, int n){
 	}
 }
 
-template<> void msort<>(char** val, int n) {
+template <> void msort(char** val, int n) {
 	int h = 1;
 	char** arr = (char**)malloc(n * sizeof(char*));
 	while (h < n) {
