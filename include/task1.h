@@ -20,7 +20,7 @@ void Merge(T* arr, int left, int right) {
 	if (left == right) return; // границы сомкнулись
 	middle = (left + right) / 2; //вычисление среднего элемента
 	begin = left; //начало первого пути
-	end = mid + 1; //начало второго пути
+	end = middle + 1; //начало второго пути
 	for (i = left; i <= right; ++i) {
 
 		if ((begin <= middle) && ((end > right) || (compare(arr[begin], arr[end])))) {
