@@ -15,7 +15,7 @@ template <typename T, int n> void map(char** array, char* (*change)(char* value)
 {
     for(size_t i = 0;i < n;i++)
     {
-        char* help_arr = new char[strlen(a[i]) + 1];
+        char* help_arr = new char[strlen(array[i]) + 1];
 
         for(size_t j = 0;j < strlen(array[i]);j++) help_arr[j] = array[i][j];
         
