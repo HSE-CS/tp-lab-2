@@ -15,7 +15,7 @@ bool comp<char*>(char* a, char* b){
 }
 
 template <typename T>
-void msort(T* arr; unsigned int N){
+void msort(T* arr, unsigned int N){
     if (N > 1){
         unsigned int leftS = N/2;
         unsigned int rightS = N - leftS;
@@ -35,7 +35,7 @@ void msort(T* arr; unsigned int N){
         unsigned int j = 0;
         unsigned int k = 0;
 
-        while (i != leftS && i != rightS){
+        while (i != leftS && j != rightS){
             if (comp(leftArr[i], rightArr[j])){
                 arr[k] = leftArr[i];
                 k++;
@@ -54,7 +54,7 @@ void msort(T* arr; unsigned int N){
             i++;
         }
 
-        while (!= rightS){
+        while (j != rightS){
             arr[k] = rightArr[j];
             k++;
             j++;
