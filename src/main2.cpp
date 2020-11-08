@@ -1,17 +1,21 @@
-#include <iostream>
 #include "task2.h"
+#include <iostream>
+
 using namespace std;
 
-template <class T> T gen()
+
+template<class T>
+T gen()
 {
-	return 1 + rand() % 100;
+	static int t = 50;
+	return --t;
 }
 
-int main()
-{
-	const size_t N{ 10 };
-	int* array = createArr<int, N>(gen);
-	for (size_t i = 0; i < N; ++i)
-		cout << array[i];
+int main() {
+	const size_t n = 10;
+	int* a = createArr<int, n>(gen);
+	for (int i = 0; i < n; ++i) {
+		cout << a[i];
+	}
 	return 0;
 }
