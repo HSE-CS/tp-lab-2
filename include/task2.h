@@ -6,10 +6,10 @@
 using namespace std;
 
 template<typename T, size_t n> 
-T* createArr(T(*gen))
+T* createArr(T(*gen)())
 {
     T* a = new T[n];
-    for (unsigned i = 0; i < n; i++) {
+    for (unsigned int i = 0; i < n; i++) {
         a[i] = gen();
     }
     return a;
