@@ -55,8 +55,18 @@ void msort(T * mas, int len)
         n *= 2;
     }
 }
+void copy(char*& _str1, char*& _str2) {
+	_str1 = _str2;
+}
+
+unsigned int min(unsigned int a, unsigned int b) {
+	if (a < b) {
+		return a;
+	}
+	return b;
+}
 template<>
-void msort<char*>(char** arr, unsigned int n) {
+void msort<char*>(char** arr,  int n) {
 
 	
 	char** _res = new char* [n];
@@ -64,14 +74,14 @@ void msort<char*>(char** arr, unsigned int n) {
 		_res[k] = new char[n];
 	}
 
-
+	
 	for (size_t i = 1; i < n; i *= 2) {
 		for (size_t j = 0; j < n - i; j += 2 * i) {
 
 			unsigned int _iter1{ 0 };
 			unsigned int _iter2{ 0 };
 			unsigned int middle = j + i;
-			unsigned int right = min(j + 2 * i, n);
+			unsigned int right =  min(j + 2 * i, n);
 			unsigned int left = j;
 			
 			while ((_iter1 + left < middle) && (_iter2 + middle < right)) {
