@@ -1,5 +1,6 @@
 #include <iostream>
-#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
 #include <cstdlib>
 #include <cstring>
 
@@ -7,46 +8,47 @@ using namespace std;
 
 template <typename T> bool comp(T a, T b)
 {
-	return a <= b;
+	return a < b;
 }
 template <> bool comp<char *>(char * a, char * b)
 {
-	return strlen(a) <= strlen(b);
+	return strlen(a) < strlen(b);
 }
 
 
-template <typename T> void msort(vector <T> &a, size_t start, size_t end)
+template <class T> void msort(T(*arr), const size_t n)
 {
-	if (end - start < 2)
-		return;
-	if (end - start == 2)
+	if (n > 1)
 	{
-		if (!comp(a[start], a[start + 1]))
-			std::swap(a[start], a[start + 1]);
-		return;
-	}
-	msort(a, start, start + (end - start) / 2);
-	msort(a, start + (end - start) / 2, end);
-	vector <T> b;
-	size_t b1 = start;
-	size_t e1 = start + (end - start) / 2;
-	size_t b2 = e1;
-	// e2 = end
+		const size_t left_n = n / 2;
+		T *left_arr = new T[left_n];
+		for (size_t i = 0; i < left_n; i++)
+			left_arr[i] = arr[i];
+		msort(left_arr, left_n);
 
-	while (b.size() < end - start)
-	{
-		if (b1 >= e1 || (b2 < end && comp(a[b2], a[b1])))
+		const size_t right_n = n - left_n;
+		T *right_arr = new T[right_n];
+		for (size_t i = 0; i < right_n; i++)
+			right_arr[i] = arr[left_n + i];
+		msort(right_arr, right_n);
+
+		for (size_t i = 0, left_i = 0, right_i = 0; i < n; i++)
 		{
-			b.push_back(a[b2]);
-			++b2;
+
+			if ((left_i < left_n) && (right_i < right_n) && comp(left_arr[left_i], right_arr[right_i]) || !(right_i < right_n))
+			{
+				arr[i] = left_arr[left_i];
+				left_i++;
+			}
+
+			else
+			{
+				arr[i] = right_arr[right_i];
+				right_i++;
+			}
+
 		}
-		else
-		{
-			b.push_back(a[b1]);
-			++b1;
-		}
+
 	}
-	for (size_t i = start; i < end; ++i)
-		a[i] = b[i - start];
 }
 
