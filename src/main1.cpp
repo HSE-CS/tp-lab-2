@@ -6,18 +6,17 @@
 
 int main() {
 
-	const size_t n = 6;
+	/*const size_t n = 6;
 	int* val = new int[n] {5, 3, 2, 4, 1, 6};
 	msort(val, n); 
-	for (int i = 0; i < n; i++) std::cout << val[i] << ' ';
-	std::cout << '/n';
+	for (int i = 0; i < n; i++) std::cout << val[i] << ' ';*/
 
-	/*double val[n]{ 4.0, 3.0, 2.4, 2.5, 2.1, -1 };
-	msort(val, n);
+	const size_t n = 6;
+	double val[n]{ 4.0, 3.0, 2.4, 2.5, 2.1, -1 };
+	msort<double>(val, n);
 	for (int i = 0; i < n; i++) std::cout << val[i] << ' ';
-	std::cout << '/n';
 
-	char* val[n]{ (char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr" };
+	/*char* val[n]{ (char*)"ffff", (char*)"fff2", (char*)"f", (char*)"ff", (char*)"vvv", (char*)"fffrr" };
 	msort(val, n);
 	for (int i = 0; i < n; i++) std::cout << val[i] << ' ';*/
 	return 0;
