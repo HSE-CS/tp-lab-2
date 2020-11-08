@@ -32,32 +32,24 @@ template <class T> void msort(T (*arr), const size_t SIZE)
             right_arr[i] = arr[LEFT_SIZE + i];
         msort(right_arr, RIGHT_SIZE);
 
-        size_t left_ind = 0, right_ind = 0;
-        for (size_t ind = 0; ind < SIZE; ind++)
+        for (size_t ind = 0, left_ind = 0, right_ind = 0; ind < SIZE; ind++)
         {
-            if (left_ind < LEFT_SIZE && right_ind < RIGHT_SIZE)
-            {
-                if ( comp(left_arr[left_ind], right_arr[right_ind]) )
-                {
-                    arr[ind] = left_arr[left_ind];
-                    left_ind++;
-                }
+            bool left_ind_corr = left_ind < LEFT_SIZE;
+            bool right_ind_corr = right_ind < RIGHT_SIZE;
+            if (left_ind_corr &&
+                right_ind_corr &&
+                comp(left_arr[left_ind], right_arr[right_ind]) ||
+                !right_ind_corr)
 
-                else
-                {
-                    arr[ind] = right_arr[right_ind];
-                    right_ind++;
-                }
-            }
-            else if (left_ind >= LEFT_SIZE)
-            {
-                arr[ind] = right_arr[right_ind];
-                right_ind++;
-            }
-            else if (right_ind >= RIGHT_SIZE)
             {
                 arr[ind] = left_arr[left_ind];
                 left_ind++;
+            }
+
+            else
+            {
+                arr[ind] = right_arr[right_ind];
+                right_ind++;
             }
 
         }
