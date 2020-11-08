@@ -9,8 +9,5 @@ template <typename T, size_t n> T *createArr(T(*gen)())
 	return arr;
 }
 
-template <typename T> T gen()
-{
-	return 1 + rand() % 100;
-}
+
 

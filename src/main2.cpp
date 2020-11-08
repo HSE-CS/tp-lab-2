@@ -3,6 +3,11 @@
 
 using namespace std;
 
+template <class T> T gen()
+{
+	return 1 + rand() % 100;
+}
+
 int main()
 {
 	const size_t n{ 10 };
