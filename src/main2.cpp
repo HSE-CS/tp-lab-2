@@ -18,12 +18,12 @@ signed main(
 
 ) {
 
-    const int size = 39;
+    const int size = 49;  // Ууу обожаю простые числа
     int *new_array = createArr<int, size>(gen);
 
     for (int i = 0; i < size; ++i) {
         printf("%d ", new_array[i]);
     }
-    
+
     return 0;
 }
