@@ -9,7 +9,7 @@ void merge_sort(T *arr, int l, int r) {
     int m = l + (r - l) / 2;
     merge_sort(arr, l, m);
     merge_sort(arr, m + 1, r);
-    int *arr2 = new int[r + 1];
+    T *arr2 = new T[r + 1];
     for (int i = 0; i < r + 1; i++)
         arr2[i] = arr[i];
     int i = l, j = m + 1;
