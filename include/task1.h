@@ -64,8 +64,8 @@ T &msort(T &array, unsigned int size) {
     if (len(array) < 2)
         return array;
     int middle = len(array) / 2;
-    auto left_part = new T[middle];
-    auto right_part = new T[len(array) - middle];
+    T *left_part = new T[middle];
+    T *right_part = new T[len(array) - middle];
 
     for (int i = 0; i < middle; ++i)
         left_part[i] = array[i];
