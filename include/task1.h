@@ -68,7 +68,7 @@ void merge(T arr[], int left, int mid, int right)
 }
 
 template < typename T >
-void msort(T arr[], int left, int right)
+void msort(T arr[], int right, int left=0)
 {
     if (left < right)
     {
