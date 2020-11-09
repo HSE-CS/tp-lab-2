@@ -74,8 +74,8 @@ void msort(T arr[], int right, int left=0)
     {
         int mid = (left + (right - left)) / 2;
 
-        msort(arr, left, mid);
-        msort(arr, mid + 1, right);
+        msort(arr, mid, left);
+        msort(arr, right, mid + 1);
 
         merge(arr, left, mid, right);
     }
