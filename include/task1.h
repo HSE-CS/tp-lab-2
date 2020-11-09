@@ -49,7 +49,7 @@ void merge_sort(char **arr, int l, int r) {
         } else if (j > r) {
             arr[k] = arr2[i];
             i++;
-        } else if (strlen(arr2[j]) < strlen(arr2[i])) {
+        } else if (strlen(arr2[j]) <= strlen(arr2[i])) {
             arr[k] = arr2[j];
             j++;
         } else {
