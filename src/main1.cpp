@@ -17,7 +17,7 @@ signed main() {
     };
 
     // msort(array);
-    print(array);
+//    print(array);
 
     return 0;
 }
