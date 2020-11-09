@@ -1,81 +1,60 @@
-#ifndef TASK1_H
+#ifndef  TASK1_H
 #define TASK1_H
 
-#include <cstring>
 
-using namespace std;
+#include<string.h>
+#include <iostream>
 
-
-template <typename T> void MergeSort(T* a, int left, int right, int size)
-{
-	if (left == right)
-		return;
-
-	int mid = (left + right + 1) / 2;
-
-	MergeSort(a, left, mid - 1, size);
-	MergeSort(a, mid, right, size);
-
-	T* arr = new T[size]{ 0 };
-	int j = 0;
-	int start = left;
-	int k = mid;
-	for (j = 0; j < right - left + 1; j++)
-	{
-		if ((k > right) || ((start <= mid - 1) && (a[start] < a[k])))
-		{
-			arr[j] = a[start];
-			start += 1;
-		}
-		else
-		{
-			arr[j] = a[k];
-			k += 1;
-		}
-	}
-	for (j = 0; j < right - left + 1; j++)
-	{
-		a[left + j] = arr[j];
-	}
-	delete[] arr;
+template<class T>
+bool comp(T a, T b) {
+	return (a < b);
 }
 
-template <> void MergeSort(char** a, int left, int right, int size)
+template<> bool comp<char*>(char* a, char* b)
 {
-	if (left == right)
-		return;
+	return (strlen(a) < strlen(b));
+}
 
-	int mid = (left + right + 1) / 2;
+template<class T>
+void msort(T* arr, size_t n) {
+	if (n > 1) {
 
-	MergeSort(a, left, mid - 1, size);
-	MergeSort(a, mid, right, size);
+		size_t l_size = n / 2;
+		size_t r_size = n - l_size;
+		T* l_arr = new T[l_size];
+		T* r_arr = new T[r_size];
 
-	char** arr = new char* [size];
-	int j = 0;
-	int start = left;
-	int f = mid;
-	for (j = 0; j < right - left + 1; j++)
-	{
-		if ((f > right) || ((start <= mid - 1) && (strlen(a[start]) < strlen(a[f]))))
-		{
-			arr[j] = a[start];
-			start += 1;
+		for (size_t i = 0; i < l_size; i++) {
+			l_arr[i] = arr[i];
 		}
-		else
-		{
-			arr[j] = a[f];
-			f += 1;
+		msort(l_arr, l_size);
+
+		for (size_t i = 0; i < r_size; i++) {
+			r_arr[i] = arr[i + l_size];
 		}
-	}
-	for (j = 0; j < right - left + 1; j++)
-	{
-		a[left + j] = arr[j];
+		msort(r_arr, r_size);
+
+		unsigned i = 0, j = 0, k = left;
+
+		while (i != l_size && j != r_size)
+		{
+			if (comp(l_arr[i], r_arr[j]))
+				arr[k++] = arr_left[i++];
+			else
+				arr[k++] = arr_right[j++];
+		}
+
+		if (i < l_size)
+			while (i < l_size)
+				arr[k++] = l_arr[i++];
+		else if (j < r_size)
+			while (j < r_size)
+				arr[k++] = l_arr[j++];
+		arr[k++] = r_arr[j++];
+
+		delete l_arr;
+		delete r_arr;
 	}
 }
 
-template <typename T> void msort(T* arr, int size)
-{
-	MergeSort(arr, 0, size - 1, size);
-}
-
-#endif TASK1_H 
+#endif
