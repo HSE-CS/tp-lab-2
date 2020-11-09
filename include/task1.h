@@ -32,25 +32,6 @@ void print(T &array) {
     std::cout << '\n';
 }
 
-//template<class T>
-//void merge(T &array, int left, int middle, int right) {
-//    int first = middle - left + 1;
-//    int second = right - middle + 1;
-//
-//
-//}
-
-
-//template<class T>
-//void msort(T &array, int left = 0, int right = -1) {
-//    if (right == -1) right = len(array);
-//    if (left < right) {
-//        int middle = left + (right - left) / 2;
-//        msort(array, left, middle);
-//        msort(array, middle + 1, right);
-//        merge(array, left, middle, right);
-//    }
-//}
 
 template<typename T>
 T &merge(T &left, T &right, int size, T &array) {
