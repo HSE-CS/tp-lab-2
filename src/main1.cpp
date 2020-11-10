@@ -1,7 +1,7 @@
 #include <iostream>
 #include "task1.h"
 
-#include <string>
+#include <cstring>
 using namespace std;
 int main() {
 	const size_t n = 6;
