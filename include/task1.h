@@ -1,6 +1,7 @@
 #pragma once
 #define TASK1_H
 #ifdef TASK1_H
+#include <string>
 template<typename T>
 
 void merge(T* arg, int first, int last, size_t size) {
