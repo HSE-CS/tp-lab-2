@@ -34,7 +34,7 @@ void print(T &array) {
 
 
 template<typename T>
-T &merge(T &left, T &right, int size, T &array) {
+T *merge(T &left[], T &right, int size, T &array) {
     auto result = new T[len(left) + len(right)];
     int left_index = 0, right_index = 0;
     while (left_index < len(left) && right_index < len(right)) {
@@ -60,7 +60,7 @@ T &merge(T &left, T &right, int size, T &array) {
 
 
 template<typename T>
-T &msort(T &array, unsigned int size) {
+T *msort(T &array, unsigned int size) {
     if (len(array) < 2)
         return array;
     int middle = len(array) / 2;
@@ -73,8 +73,8 @@ T &msort(T &array, unsigned int size) {
     for (int i = 0; i < len(array) - middle; ++i)
         right_part[i] = array[i + middle];
 
-    auto left = msort(left_part);
-    auto right = msort(right_part);
+    auto left = msort(left_part, middle);
+    auto right = msort(right_part, len(array) - middle);
     return merge(left, right, size, array);
 }
 

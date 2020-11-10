@@ -24,7 +24,7 @@ signed main() {
             "When the rubberband starts to jam",
     };
 
-    // msort(array);
+    msort(array, 13);
 //    print(array);
 
     return 0;
