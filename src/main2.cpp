@@ -10,19 +10,6 @@ T gen()
 	return t++;
 }
 
-template<>
-char* gen()
-{
-	static unsigned t = 0;
-	t++;
-	char* s = new char[t + 1];
-
-	for (size_t i = 0; i < t; i++)
-		s[i] = '0' + i;
-	s[t] = '\0';
-
-	return s;
-}
 int main() {
 	const size_t n = 5;
 	int* arr;
