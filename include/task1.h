@@ -34,7 +34,7 @@ void print(T &array) {
 
 
 template<typename T>
-T *merge(T &left[], T &right, int size, T &array) {
+T *merge(T &left, T &right, int size, T &array) {
     auto result = new T[len(left) + len(right)];
     int left_index = 0, right_index = 0;
     while (left_index < len(left) && right_index < len(right)) {
