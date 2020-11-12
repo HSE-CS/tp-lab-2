@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/toliman/Projects/HSE-CS/TP-LAB-2/tp-Lab-2/src/main2.cpp" "/home/toliman/Projects/HSE-CS/TP-LAB-2/tp-Lab-2/cmake-build-debug/CMakeFiles/task2.dir/src/main2.cpp.o"
+  "E:/Clion/HSE-CS/tp-Lab-2/src/main2.cpp" "E:/Clion/HSE-CS/tp-Lab-2/cmake-build-debug/CMakeFiles/task2.dir/src/main2.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

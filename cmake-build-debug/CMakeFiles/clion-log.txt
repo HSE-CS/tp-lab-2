@@ -1,4 +1,4 @@
-/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/toliman/Projects/HSE-CS/TP-LAB-2/tp-Lab-2
+"E:\Clion\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" E:\Clion\HSE-CS\tp-Lab-2
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/toliman/Projects/HSE-CS/TP-LAB-2/tp-Lab-2/cmake-build-debug
+-- Build files have been written to: E:/Clion/HSE-CS/tp-Lab-2/cmake-build-debug

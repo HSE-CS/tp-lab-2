@@ -2,30 +2,37 @@
 // Created by toliman on 08.11.2020.
 //
 
-#include "task1.h"
+#include "../include/task1.h"
 
 
 signed main() {
-    int array[13]{34, 324, 23, 29384, 2634, 904440, 182828};
+    int array[7]{34, 324, 23, 29384, 2634, 904440, 182828};
     double numbers[5]{34.2342, 980348.0293, 99399.2737423, .66663663, 78732.992348283};
-    char TheRubberBandMan[20][100] = {
-            "Hand me down my walkin' cane\n",
-            "Hand me down my hat\n",
-            "Hurry now and don't be late\n",
-            "'Cause we ain't got time to chat\n",
-            "You and me we're goin' out\n",
-            "To catch the latest sound\n",
-            "Guaranteed to blow your mind\n",
-            "So high you won't come down\n",
-            "Hey ya'll prepare yourself for the rubberband man\n",
-            "You've never heard a sound\n",
-            "Like the rubberband man\n",
-            "You're bound to lose control\n",
-            "When the rubberband starts to jam",
+    char **TheRubberBandMan = new char*[13] {
+            (char *) "Hand me down my walkin cane\n",
+            (char *) "Hand me down my hat\n",
+            (char *) "Hurry now and dont be late\n",
+            (char *) "Cause we aint got time to chat\n",
+            (char *) "You and me were goin out\n",
+            (char *) "To catch the latest sound\n",
+            (char *) "Guaranteed to blow your mind\n",
+            (char *) "So high you wont come down\n",
+            (char *) "Hey yall prepare yourself for the rubberband man\n",
+            (char *) "Youve never heard a sound\n",
+            (char *) "Like the rubberband man\n",
+            (char *) "Youre bound to lose control\n",
+            (char *) "When the rubberband starts to jam",
     };
 
-    msort(array, 13);
-//    print(array);
+    msort(array, 7);
+    print(array, 7);
+
+    msort(numbers, 5);
+    print(numbers, 5);
+
+
+    // msort(TheRubberBandMan, 13);
+
 
     return 0;
 }
