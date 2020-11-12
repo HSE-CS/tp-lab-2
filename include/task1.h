@@ -15,7 +15,7 @@ int compare(T first, T second) {
 
 
 template<>
-int compare(const char *first, const char *second) {
+int compare(char *first, char *second) {
     return (int) (strlen(first) <= strlen(second));
 }
 
