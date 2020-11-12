@@ -1,4 +1,4 @@
-include "gtest/gtest.h"
+#include "gtest/gtest.h"
 namespace lab2
 {
 	#include "task1.h"
