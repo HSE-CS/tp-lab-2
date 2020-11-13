@@ -25,10 +25,10 @@ signed main() {
     };
 
     msort(array, 7);
-    print(array, 7);
+    // print(array, 7);
 
     msort(numbers, 5);
-    print(numbers, 5);
+    // print(numbers, 5);
 
 
     // msort(TheRubberBandMan, 13);

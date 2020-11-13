@@ -25,20 +25,20 @@ int len(T &array) {
     return sizeof(array) / sizeof(array[0]);
 }
 
-template<typename T>
-void print(T &array, int size) {
-    for (int i = 0; i < size; ++i)
-        std::cout << array[i] << ' ';
-    std::cout << '\n';
-}
+//template<typename T>
+//void print(T &array, int size) {
+//    for (int i = 0; i < size; ++i)
+//        std::cout << array[i] << ' ';
+//    std::cout << '\n';
+//}
+//
+//void printchar(char **array, int size) {
+//    // for (int i = 0; i < size; ++i)
+//    std::cout << array[2] << ' ';
+//    std::cout << '\n';
+//}
 
-void printchar(char **array, int size) {
-    // for (int i = 0; i < size; ++i)
-    std::cout << array[2] << ' ';
-    std::cout << '\n';
-}
-
-// Не сложилось
+// Не сложилось не получилось
 //
 //template<typename T>
 //T *merge(T &left, T &right, int size, T &array) {
