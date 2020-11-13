@@ -7,8 +7,8 @@
 
 signed main() {
     int array[7]{34, 324, 23, 29384, 2634, 904440, 182828};
-    double numbers[5]{34.2342, 980348.0293, 99399.2737423, .66663663, 78732.992348283};
-    char **TheRubberBandMan = new char*[13] {
+    double numbers[6]{4.0, 3.0, 2.4, 2.5, 2.1, -1};
+    char **TheRubberBandMan = new char *[13]{
             (char *) "Hand me down my walkin cane\n",
             (char *) "Hand me down my hat\n",
             (char *) "Hurry now and dont be late\n",
@@ -28,7 +28,9 @@ signed main() {
     // print(array, 7);
 
     msort(numbers, 5);
-    // print(numbers, 5);
+
+    for (int i = 0; i < 6; ++i) { std::cout << numbers[i] << ' '; }
+    //  print(numbers, 5);
 
 
     // msort(TheRubberBandMan, 13);

@@ -10,7 +10,7 @@
 
 template<typename T>
 int compare(T first, T second) {
-    return (int) (first <= second);
+    return first <= second;
 }
 
 
