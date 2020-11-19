@@ -168,7 +168,7 @@ int min(int f, int s) {
 
 template<typename T>
 void merge(T *array, T *temp, int i, int l, int size) {
-    int j = i + l, n1 = __min(j, size), n2 = __min(j + l, size), k = i;
+    int j = i + l, n1 = min(j, size), n2 = min(j + l, size), k = i;
     while (i < n1 && j < n2) {
         if (compare(array[i], array[j]))
             temp[k++] = array[i++];
