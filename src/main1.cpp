@@ -18,8 +18,8 @@ void print(T *array, int size) {
 }
 
 signed main() {
-//    int array[7]{34, 324, 23, 29384, 2634, 904440, 182828};
-    int array[7]{1, 2, 3, 4, 5, 6, 7};
+    int array[7]{34, 324, 23, 29384, 2634, 904440, 182828};
+    // int array[7]{1, 2, 3, 4, 5, 6, 7};
 //    double numbers[6]{4.0, 3.0, 2.4, 2.5, 2.1, -1};
 //    char TheRubberBandMan[14]{
 //            (char *) "Hand me down my walkin cane\n",
@@ -37,8 +37,8 @@ signed main() {
 //            reinterpret_cast<char>((char *) "When the rubberband starts to jam")},
 //    };
 //
-//    msort(array, 7);
-//    print(array, 7);
+    msort(array, 7);
+    print(array, 7);
 //
 //    msort(TheRubberBandMan, 13);
 //    //print(TheRubberBandMan[7]);

@@ -6,7 +6,7 @@
 #define TASK1_TASK3_H
 
 template<typename T, int size>
-T *map(T *array, T(*homomorphism)(T)) {
+void map(T *array, T(*homomorphism)(T)) {
     
     for (int i = 0; i < size; ++i)
         array[i] = homomorphism(array[i]);

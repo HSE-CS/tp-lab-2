@@ -32,41 +32,42 @@ int len(T &array) {
 //    return sizeof(array) / sizeof(array[0]);
 //}
 
+// С третьим вариантом тоже не задалось, пишем четвертый
+//
+/////template<typename T>
+//void merge(T *array, int first, int last) {
+//   int start;
+//   int middle;
+//   int final;
+//   int pointer;
+//   T *temp = new T[50];
+//  middle = (first + last) / 2;
+//  start = first;
+// final = middle + 1;
+//  for (pointer = first; pointer <= last; ++pointer) {
+//      if (start < middle && (final > last || compare(array[start], array[final]))) {
+//          temp[pointer] = array[start];
+//           start++;
+//     } else {
+//           temp[pointer] = array[final];
+//           final++;
+///       }
+//  }
+//  for (pointer = first; pointer < last; ++pointer) {
+//       array[pointer] = temp[pointer];
+//   }
+//    delete[] temp;
+//}
 
-template<typename T>
-void merge(T *array, int first, int last) {
-    int start;
-    int middle;
-    int final;
-    int pointer;
-    T *temp = new T[50];
-    middle = (first + last) / 2;
-    start = first;
-    final = middle + 1;
-    for (pointer = first; pointer <= last; ++pointer) {
-        if (start < middle && (final > last || compare(array[start], array[final]))) {
-            temp[pointer] = array[start];
-            start++;
-        } else {
-            temp[pointer] = array[final];
-            final++;
-        }
-    }
-    for (pointer = first; pointer < last; ++pointer) {
-        array[pointer] = temp[pointer];
-    }
-    delete[] temp;
-}
-
-template<typename T>
-void msort(T *array, int size, int first = 1, int last = -1) {
-    if (last == -1) last = size;
-    if (first < last) {
-        msort(array, size, first, (first + last) / 2);
-        msort(array, size, (first + last) / 2 + 1, last);
-        merge(array, first, last);
-    }
-}
+//template<typename T>
+//void msort(T *array, int size, int first = 0, int last = -1) {
+//   if (last == -1) last = size;
+//  if (first < last) {
+//       msort(array, size, first, (first + last) / 2);
+//       msort(array, size, (first + last) / 2 + 1, last);
+//       merge(array, first, last);
+//   }
+//}
 
 //template<typename T>
 //void print(T &array, int size) {
@@ -160,5 +161,37 @@ void msort(T *array, int size, int first = 1, int last = -1) {
 //        merge(array, left, middle, right);
 //    }
 //}
+
+
+template<typename T>
+void merge(T *array, T *temp, int i, int l, int size) {
+    int j = i + l, n1 = __min(j, size), n2 = __min(j + l, size), k = i;
+    while (i < n1 && j < n2) {
+        if (compare(array[i], array[j]))
+            temp[k++] = array[i++];
+        else
+            temp[k++] = array[j++];
+
+    }
+    while (i < n1) temp[k++] = array[i++];
+    while (j < n2) temp[k++] = array[j++];
+}
+
+template<typename T>
+void msort(T *array, int size) {
+    T *temp = new T[size];
+    int l = 1;
+
+    while (l < size) {
+        for (int i = 0; i < size; i += l * 2)
+            merge(array, temp, i, l, size);
+        l *= 2;
+        for (int i = 0; i < size; i += l * 2)
+            merge(temp, array, i, l, size);
+        l *= 2;
+    }
+
+
+}
 
 #endif //TASK1_TASK1_H
