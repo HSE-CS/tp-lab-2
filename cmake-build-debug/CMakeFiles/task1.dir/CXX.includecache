@@ -11,6 +11,10 @@ cstring
 -
 iostream
 -
+string
+-
+iostream
+-
 
 E:/Clion/HSE-CS/tp-Lab-2/src/main1.cpp
 ../include/task1.h

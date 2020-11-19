@@ -7,6 +7,8 @@
 
 #include <cstring>
 #include <iostream>
+#include <string>
+#include <iostream>
 
 template<typename T>
 int compare(T first, T second) {
@@ -15,7 +17,7 @@ int compare(T first, T second) {
 
 
 template<>
-int compare(char *first, char *second) {
+int compare(const char *first, const char *second) {
     return (int) (strlen(first) <= strlen(second));
 }
 
@@ -23,6 +25,47 @@ int compare(char *first, char *second) {
 template<typename T>
 int len(T &array) {
     return sizeof(array) / sizeof(array[0]);
+}
+
+//template<>
+//int len(const char **array) {
+//    return sizeof(array) / sizeof(array[0]);
+//}
+
+
+template<typename T>
+void merge(T *array, int first, int last) {
+    int start;
+    int middle;
+    int final;
+    int pointer;
+    T *temp = new T[50];
+    middle = (first + last) / 2;
+    start = first;
+    final = middle + 1;
+    for (pointer = first; pointer <= last; ++pointer) {
+        if (start < middle && (final > last || compare(array[start], array[final]))) {
+            temp[pointer] = array[start];
+            start++;
+        } else {
+            temp[pointer] = array[final];
+            final++;
+        }
+    }
+    for (pointer = first; pointer < last; ++pointer) {
+        array[pointer] = temp[pointer];
+    }
+    delete[] temp;
+}
+
+template<typename T>
+void msort(T *array, int size, int first = 1, int last = -1) {
+    if (last == -1) last = size;
+    if (first < last) {
+        msort(array, size, first, (first + last) / 2);
+        msort(array, size, (first + last) / 2 + 1, last);
+        merge(array, first, last);
+    }
 }
 
 //template<typename T>
@@ -85,34 +128,37 @@ int len(T &array) {
 //    return merge(left, right, size, array);
 //}
 
-template<typename T>
-void merge(T *array, int left, int middle, int right) {
-    T *left_part = new T[middle - left + 1];
-    T *right_part = new T[right - middle];
-    for (int i = 0; i < middle - left + 1; ++i) left_part[i] = array[i + left];
-    for (int i = 0; i < right - middle; ++i) right_part[i] = array[i + middle + 1];
-    int left_index = 0, right_index = 0, base_index = left;
-    while (left_index < middle - left + 1 && right_index < right - middle) {
-        if (compare(left_part[left_index], right_part[right_index])) array[base_index++] = left_part[left_index++];
-        else array[base_index++] = right_part[right_index++];
-    }
-    while (left_index < middle - left + 1) array[base_index++] = left_part[left_index++];
-    while (right_index < right - middle) array[base_index++] = right_part[right_index++];
-}
 
-
-template<typename T>
-void msort(T *array, const int size, int left = 0, int right = -1) {
-
-    if (right == -1) right = size;
-
-
-    if (left < right) {
-        int middle = left + (right - left) / 2;
-        msort(array, size, left, middle);
-        msort(array, size, middle + 1, right);
-        merge(array, left, middle, right);
-    }
-}
+// Тоже не срослось, попробуем написать третий
+//
+//template<typename T>
+//void merge(T *array, int left, int middle, int right) {
+//    T *left_part = new T[middle - left + 1];
+//    T *right_part = new T[right - middle];
+//    for (int i = 0; i < middle - left + 1; ++i) left_part[i] = array[i + left];
+//    for (int i = 0; i < right - middle; ++i) right_part[i] = array[i + middle + 1];
+//    int left_index = 0, right_index = 0, base_index = left;
+//    while (left_index < middle - left + 1 && right_index < right - middle) {
+//        if (compare(left_part[left_index], right_part[right_index])) array[base_index++] = left_part[left_index++];
+//        else array[base_index++] = right_part[right_index++];
+//    }
+//    while (left_index < middle - left + 1) array[base_index++] = left_part[left_index++];
+//    while (right_index < right - middle) array[base_index++] = right_part[right_index++];
+//}
+//
+//
+//template<typename T>
+//void msort(T *array, const int size, int left = 0, int right = -1) {
+//
+//    if (right == -1) right = size;
+//
+//
+//    if (left < right) {
+//        int middle = left + (right - left) / 2;
+//        msort(array, size, left, middle);
+//        msort(array, size, middle + 1, right);
+//        merge(array, left, middle, right);
+//    }
+//}
 
 #endif //TASK1_TASK1_H
