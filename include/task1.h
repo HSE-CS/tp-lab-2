@@ -162,6 +162,9 @@ int len(T &array) {
 //    }
 //}
 
+int min(int f, int s) {
+    return f < s ? f : s;
+}
 
 template<typename T>
 void merge(T *array, T *temp, int i, int l, int size) {
