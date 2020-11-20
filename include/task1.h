@@ -18,7 +18,7 @@ int compare(T first, T second) {
 
 template<>
 int compare(char *first, char *second) {
-    std::cout << strlen(first) << ' ' << strlen(second) << '\n';
+
     return strlen(first) <= strlen(second);
 }
 
