@@ -19,7 +19,7 @@ int compare(T first, T second) {
 template<>
 int compare(char *first, char *second) {
 
-    return strlen(first) <= strlen(second);
+    return strlen(first) < strlen(second);
 }
 
 
