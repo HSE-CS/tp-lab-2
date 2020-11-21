@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Clion/HSE-CS/tp-Lab-2/include/task1.h
+cstring
+-
+iostream
+-
+string
+-
+iostream
+-
+
+E:/Clion/HSE-CS/tp-Lab-2/src/main1.cpp
+../include/task1.h
+E:/Clion/HSE-CS/tp-Lab-2/include/task1.h
+

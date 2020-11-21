@@ -1,0 +1,5 @@
+E:/Clion/HSE-CS/tp-Lab-2/cmake-build-debug/CMakeFiles/task1.dir
+E:/Clion/HSE-CS/tp-Lab-2/cmake-build-debug/CMakeFiles/task2.dir
+E:/Clion/HSE-CS/tp-Lab-2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/Clion/HSE-CS/tp-Lab-2/cmake-build-debug/CMakeFiles/task3.dir
+E:/Clion/HSE-CS/tp-Lab-2/cmake-build-debug/CMakeFiles/edit_cache.dir

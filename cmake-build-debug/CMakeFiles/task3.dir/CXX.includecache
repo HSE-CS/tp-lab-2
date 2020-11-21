@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/task3.h
+
+E:/Clion/HSE-CS/tp-Lab-2/src/main3.cpp
+task3.h
+E:/Clion/HSE-CS/tp-Lab-2/src/task3.h
+
