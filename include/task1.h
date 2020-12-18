@@ -101,7 +101,7 @@ void msort(T inf[], size_t l_D)
 	}
 }
 template <>
-void nsort(char** inf, size_t l_D)
+void msort(char** inf, size_t l_D)
 {
 
 	if (l_D > 1) 
