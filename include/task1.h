@@ -76,7 +76,7 @@ void merge(char** merged, size_t lenD, char** L, int l_L, char** R, int l_R)
 }
 
 template < typename T >
-void nsort(T inf[], size_t l_D)
+void msort(T inf[], size_t l_D)
 {
 	if (l_D > 1) 
 	{
