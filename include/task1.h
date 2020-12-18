@@ -95,8 +95,8 @@ void nsort(T inf[], size_t l_D)
 				R[i - mid] = inf[i];
 			}
 		}
-		nsort(L, mid);
-		nsort(R, re);
+		msort(L, mid);
+		msort(R, re);
 		merge(inf, l_D, L, mid, R, re);
 	}
 }
@@ -122,8 +122,8 @@ void nsort(char** inf, size_t l_D)
 				R[i - mid] = inf[i];
 			}
 		}
-		nsort(L, mid);
-		nsort(R, re);
+		msort(L, mid);
+		msort(R, re);
 		merge(inf, l_D, L, mid, R, re);
 	}
 
