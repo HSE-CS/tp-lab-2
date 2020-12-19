@@ -2,7 +2,7 @@
 
 
 template < typename T, int N >
-T* createArr(T(*gen)(T))
+T* createArr(T(*gen)())
 {
 
 	T * x = new T [N];
