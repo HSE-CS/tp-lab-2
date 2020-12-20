@@ -51,7 +51,12 @@ void merge(char** merged, size_t lenD, char** L, int l_L, char** R, int l_R)
 
 		if (i < l_L && j < l_R) 
 		{
-			if (strlen(L[i]) <= strlen(R[j])) 
+			if (strlen(L[i]) == strlen(R[j]))
+			{
+				if (L[strlen(L[i]) - 1] > R[strlen(R[j]) - 1]) merged[i + j] = R[j];
+				else merged[i + j] = L[i];
+			}
+			if (strlen(L[i]) < strlen(R[j])) 
 			{
 				merged[i + j] = L[i];
 				i++;
